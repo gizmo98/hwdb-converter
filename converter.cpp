@@ -1036,7 +1036,7 @@ int main()
 	for (int model = 0; model < 0x9000; model++) {
 		for (int revision = 0; revision < 0x9000; revision++) {
 			for (int i = 0; i < count; i++) {
-				if (linux_devices[i].model == model && linux_devices[i].revision == revision) {
+				if ((linux_devices[i].model == model) && ((linux_devices[i].revision & 0xFFFF) == revision)) {
 
 					// write to console
 					std::cout << "	{\n";
