@@ -1123,15 +1123,15 @@ int main()
 				(gChipInfo_STM32_4_6_7[i].FORMAT_P010LSB_I010 == 1 ? chipMinorFeatures12_FORMAT_P010LSB_I010 : 0) |
 				(gChipInfo_STM32_4_6_7[i].ENDIAN_CONTROL == 1 ? chipMinorFeatures12_ENDIAN_CONTROL : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_RGB_PLANAR == 1 ? chipMinorFeatures12_G2D_RGB_PLANAR : 0) |
-				(gChipInfo_STM32_4_6_7[i].G2D_RGB_PLANAR_SOURCE == 1 ? chipMinorFeatures12_G2D_RGB_PLANAR_SOURCE : 0) |
+				//(gChipInfo_STM32_4_6_7[i].G2D_RGB_PLANAR_SOURCE == 1 ? chipMinorFeatures12_G2D_RGB_PLANAR_SOURCE : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_DEC400EX == 1 ? chipMinorFeatures12_G2D_DEC400EX : 0) |
-				(gChipInfo_STM32_4_6_7[i].G2D_FC_IN_DEC400EX == 1 ? chipMinorFeatures12_G2D_FC_IN_DEC400EX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].G2D_FC_IN_DEC400EX == 1 ? chipMinorFeatures12_G2D_FC_IN_DEC400EX : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_NO_YUV420_SOURCE == 1 ? chipMinorFeatures12_G2D_NO_YUV420_SOURCE : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_YUV420_101010 == 1 ? chipMinorFeatures12_G2D_YUV420_101010 : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_MultiSrcBlt_Pipe == 1 ? chipMinorFeatures12_G2D_MultiSrcBlt_Pipe : 0) |
-				(gChipInfo_STM32_4_6_7[i].G2D_Stretch_MultiSrc_Pipe == 1 ? chipMinorFeatures12_G2D_Stretch_MultiSrc_Pipe : 0) |
+				//(gChipInfo_STM32_4_6_7[i].G2D_Stretch_MultiSrc_Pipe == 1 ? chipMinorFeatures12_G2D_Stretch_MultiSrc_Pipe : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_Normalization == 1 ? chipMinorFeatures12_G2D_Normalization : 0) |
-				(gChipInfo_STM32_4_6_7[i].G2D_Normalization_Quantization == 1 ? chipMinorFeatures12_G2D_Normalization_Quantization : 0) |
+				//(gChipInfo_STM32_4_6_7[i].G2D_Normalization_Quantization == 1 ? chipMinorFeatures12_G2D_Normalization_Quantization : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_FRAME_DONE_INTR == 1 ? chipMinorFeatures12_G2D_FRAME_DONE_INTR : 0) |
 				(gChipInfo_STM32_4_6_7[i].G2D_MASK_AND_COLORKEY == 1 ? chipMinorFeatures12_G2D_MASK_AND_COLORKEY : 0) |
 				(gChipInfo_STM32_4_6_7[i].AXIFE == 1 ? chipMinorFeatures12_AXIFE : 0) |
