@@ -39,6 +39,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 
+//#define EXTENDED_FEATURE_LIST				1
 
 #define PIPE_ID_PIPE_3D						0x00000000
 #define PIPE_ID_PIPE_2D						0x00000001
@@ -481,5 +482,72 @@ DEALINGS IN THE SOFTWARE.
 #define chipMinorFeatures11_NN_INTERLEVE8			0x00000008
 #define chipMinorFeatures11_TP_REORDER				0x00000010
 #define chipMinorFeatures11_PE_DEPTH_ONLY_OQFIX			0x00000020
+
+#if defined EXTENDED_FEATURE_LIST
+#define chipMinorFeatures11_TX_SEAMLESS_CUBE		0x00000040
+#define chipMinorFeatures11_TX_SNORM_SUPPORT		0x00000080
+#define chipMinorFeatures11_SH_SCATTER_GATHER		0x00000100
+#define chipMinorFeatures11_HWMANAGED_LS			0x00000200
+#define chipMinorFeatures11_SH_IMAGE_ENABLE_FIX		0x00000400
+#define chipMinorFeatures11_MSAA_FRAGMENT_OPERATION	0x00000800
+#define chipMinorFeatures11_PE_TILE_CACHE_FLUSH_FIX	0x00001000
+#define chipMinorFeatures11_BLT_YUV_OUTPUT			0x00002000
+#define chipMinorFeatures11_SH_IO_CG_FIX			0x00004000
+#define chipMinorFeatures11_SH_ROBUSTNESS_FIX		0x00008000
+#define chipMinorFeatures11_USC_ATOMIC_FIX2			0x00010000
+#define chipMinorFeatures11_PE_A8B8G8R8				0x00020000
+#define chipMinorFeatures11_MULTIVIEW_RENDER		0x00040000
+#define chipMinorFeatures11_FE_DRAW_DIRECT			0x00080000
+#define chipMinorFeatures11_TX_VKBORDER_MODE		0x00100000
+#define chipMinorFeatures11_TX_UNNORMALIZED_COORD	0x00200000
+#define chipMinorFeatures11_PA_LINECLIP_FIX			0x00400000
+#define chipMinorFeatures11_TX_8bit_UVFrac_ROUNDING_FIX 0x00800000
+#define chipMinorFeatures11_MP_ARCH					0x01000000
+#define chipMinorFeatures11_TX_NO_FIXED_FILTER		0x02000000
+#define chipMinorFeatures11_SHARE_Z					0x04000000
+#define chipMinorFeatures11_DE_2D_FAST_CLEAR		0x08000000
+#define chipMinorFeatures11_DE_TILESTATUS_ROTATION_FIX 0x10000000
+#define chipMinorFeatures11_TX_CLEAR_PENDING_FIX	0x20000000
+#define chipMinorFeatures11_HI1_L2_CACHE			0x40000000
+#define chipMinorFeatures11_USC_EVICT_CTRL_FIFO_FLOP_RESET_FIX 0x80000000
+#define chipMinorFeatures12_FORMAT_10BIT_CROSS_4K	0x00000001
+#define chipMinorFeatures12_FORMAT_P010LSB_I010		0x00000002
+#define chipMinorFeatures12_ENDIAN_CONTROL			0x00000004
+#define chipMinorFeatures12_G2D_RGB_PLANAR			0x00000008
+#define chipMinorFeatures12_G2D_RGB_PLANAR_SOURCE	0x00000010
+#define chipMinorFeatures12_G2D_DEC400EX			0x00000020
+#define chipMinorFeatures12_G2D_FC_IN_DEC400EX		0x00000040
+#define chipMinorFeatures12_G2D_NO_YUV420_SOURCE	0x00000080
+#define chipMinorFeatures12_G2D_YUV420_101010		0x00000100
+#define chipMinorFeatures12_G2D_MultiSrcBlt_Pipe	0x00000200
+#define chipMinorFeatures12_G2D_Stretch_MultiSrc_Pipe 0x00000400
+#define chipMinorFeatures12_G2D_Normalization		0x00000800
+#define chipMinorFeatures12_G2D_Normalization_Quantization 0x00001000
+#define chipMinorFeatures12_G2D_FRAME_DONE_INTR		0x00002000
+#define chipMinorFeatures12_G2D_MASK_AND_COLORKEY	0x00004000
+#define chipMinorFeatures12_AXIFE					0x00008000
+#define chipMinorFeatures12_SH_VX2_FLOATING_MAD_FIX 0x00010000
+#define chipMinorFeatures12_TS_FC_VULKAN_SUPPORT	0x00020000
+#define chipMinorFeatures12_MSAA_FLOAT_64BIT		0x00040000
+#define chipMinorFeatures12_INDIRECT_COMPUTE_ZERODIM_FIX 0x00080000
+#define chipMinorFeatures12_Q_CHANNEL_SUPPORT		0x00100000
+#define chipMinorFeatures12_MMU_PAGE_DESCRIPTOR		0x00200000
+#define chipMinorFeatures12_YUV_LINEAR_TO_TILE_ROTATE	0x00400000
+#define chipMinorFeatures12_VEC2_IMULIMAD32_SUPPORT	0x00800000
+#define chipMinorFeatures12_VEC4_IMULIMAD32_SUPPORT	0x01000000
+#define chipMinorFeatures12_VEC2_IDIVIMOD16_SUPPORT	0x02000000
+#define chipMinorFeatures12_DST_TEX_I2F_F2I_INST_DEPRECATE	0x04000000
+#define chipMinorFeatures12_ALU_FP16_INSTRUCTIONS	0x08000000
+#define chipMinorFeatures12_DUAL16_14BIT_PC_SUPPORT	0x10000000
+#define chipMinorFeatures12_LDST_CONV_4ROUNDING_MODES	0x20000000
+#define chipMinorFeatures12_FULL_PACK_MODE_SUPPORT	0x40000000
+#define chipMinorFeatures12_DEPTH_FLOAT32_SUPPORT	0x80000000
+#define chipMinorFeatures13_GPU_INSPECTOR_COUNTERS	0x00000001
+#define chipMinorFeatures13_FP32_TO_FP16_CONV_FIX	0x00000002
+#define chipMinorFeatures13_IMGLD_COMP_COUNT_FIX	0x00000004
+#define chipMinorFeatures13_IMGLD_WIDTH_LT16_FIX	0x00000008
+#define chipMinorFeatures13_TX_FILTER_ROUND_FIX		0x00000010
+
+#endif
 
 #endif /* COMMON_XML */
