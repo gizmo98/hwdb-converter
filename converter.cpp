@@ -62,6 +62,13 @@ typedef struct {
 	int minor_features11;
 	int minor_features12;
 	int minor_features13;
+	int minor_features14;
+	int minor_features15;
+	int minor_features16;
+	int minor_features17;
+	int minor_features18;
+	int minor_features19;
+	int minor_features20;
 } linux_chips;
 
 int main()
@@ -604,7 +611,269 @@ int main()
 				(gChipInfo[i].FP32_TO_FP16_CONV_FIX == 1 ? chipMinorFeatures13_FP32_TO_FP16_CONV_FIX : 0) |
 				(gChipInfo[i].IMGLD_COMP_COUNT_FIX == 1 ? chipMinorFeatures13_IMGLD_COMP_COUNT_FIX : 0) |
 				(gChipInfo[i].IMGLD_WIDTH_LT16_FIX == 1 ? chipMinorFeatures13_IMGLD_WIDTH_LT16_FIX : 0) |
-				(gChipInfo[i].TX_FILTER_ROUND_FIX == 1 ? chipMinorFeatures13_TX_FILTER_ROUND_FIX : 0);
+				(gChipInfo[i].TX_FILTER_ROUND_FIX == 1 ? chipMinorFeatures13_TX_FILTER_ROUND_FIX : 0) |
+				(gChipInfo[i].SH_FP32_FMA_SUPPORT == 1 ? chipMinorFeatures13_SH_FP32_FMA_SUPPORT : 0) |
+				(gChipInfo[i].PE_64BPP_LINEAR_FORMAT == 1 ? chipMinorFeatures13_PE_64BPP_LINEAR_FORMAT : 0) |
+				(gChipInfo[i].TX_ETC2_COMPRESSION == 1 ? chipMinorFeatures13_TX_ETC2_COMPRESSION : 0) |
+				(gChipInfo[i].HIGHP_VEC2 == 1 ? chipMinorFeatures13_HIGHP_VEC2 : 0) |
+				(gChipInfo[i].MMU_PD_42_BIT_ADDRESS == 1 ? chipMinorFeatures13_MMU_PD_42_BIT_ADDRESS : 0) |
+				(gChipInfo[i].BLT_ROBUSTNESS_FIX == 1 ? chipMinorFeatures13_BLT_ROBUSTNESS_FIX : 0) |
+				(gChipInfo[i].TFB_PERF_FIX == 1 ? chipMinorFeatures13_TFB_PERF_FIX : 0) |
+				(gChipInfo[i].SH_SUPERSCALAR_ARCH == 1 ? chipMinorFeatures13_SH_SUPERSCALAR_ARCH : 0) | 00
+				(gChipInfo[i].PA_ZEROAREA_LINE_FIX == 1 ? chipMinorFeatures13_PA_ZEROAREA_LINE_FIX : 0) |
+				(gChipInfo[i].VG_IMAGE_16K == 1 ? chipMinorFeatures13_VG_IMAGE_16K : 0) |
+				(gChipInfo[i].VG_FORMAT_ARGB2222 == 1 ? chipMinorFeatures13_VG_FORMAT_ARGB2222 : 0) |
+				(gChipInfo[i].VIP_HW_FINAL_RELEASE == 1 ? chipMinorFeatures13_VIP_HW_FINAL_RELEASE : 0) |
+				(gChipInfo[i].NN_SINGLEPORT_ACCUMBUFFER == 1 ? chipMinorFeatures13_NN_SINGLEPORT_ACCUMBUFFER : 0) |
+				(gChipInfo[i].NN_STRIDE_SUPPORT == 1 ? chipMinorFeatures13_NN_STRIDE_SUPPORT : 0) |
+				(gChipInfo[i].SWTILING_PHASE1 == 1 ? chipMinorFeatures13_SWTILING_PHASE1 : 0) |
+				(gChipInfo[i].SWTILING_PHASE2 == 1 ? chipMinorFeatures13_SWTILING_PHASE2 : 0) |
+				(gChipInfo[i].TP_SIMPLE_INT16 == 1 ? chipMinorFeatures13_TP_SIMPLE_INT16 : 0) |
+				(gChipInfo[i].TP_REAL_INT16 == 1 ? chipMinorFeatures13_TP_REAL_INT16 : 0) |
+				(gChipInfo[i].TP_ROI_POOLING == 1 ? chipMinorFeatures13_TP_ROI_POOLING : 0) |
+				(gChipInfo[i].TP_MAX_POOLING_STRIDE1 == 1 ? chipMinorFeatures13_TP_MAX_POOLING_STRIDE1 : 0) |
+				(gChipInfo[i].TP_LRN == 1 ? chipMinorFeatures13_TP_LRN : 0) |
+				(gChipInfo[i].TF_QUANTIZATION == 1 ? chipMinorFeatures13_TF_QUANTIZATION : 0) |
+				(gChipInfo[i].NN_NONZERO_BORDER == 1 ? chipMinorFeatures13_NN_NONZERO_BORDER : 0) |
+				(gChipInfo[i].NN_MIRROR_BORDER == 1 ? chipMinorFeatures13_NN_MIRROR_BORDER : 0) |
+				(gChipInfo[i].AI_GPU == 1 ? chipMinorFeatures13_AI_GPU : 0);
+
+			uint32_t features14 =
+				(gChipInfo[i].TP_TENSOR_ADD_MUL == 1 ? chipMinorFeatures13_TP_TENSOR_ADD_MUL : 0) |
+				(gChipInfo[i].NN_DEPTHWISE_INT16XINT8 == 1 ? chipMinorFeatures13_NN_DEPTHWISE_INT16XINT8 : 0) |
+				(gChipInfo[i].NN_DEPTHWISE_8BIT_VIP_V7 == 1 ? chipMinorFeatures14_NN_DEPTHWISE_8BIT_VIP_V7 : 0) |
+				(gChipInfo[i].TP_SOFTMAX == 1 ? chipMinorFeatures14_TP_SOFTMAX : 0) |
+				(gChipInfo[i].NN_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_NN_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				(gChipInfo[i].TP_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_TP_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				(gChipInfo[i].CONV_INT16X8BIT_VIP_V7 == 1 ? chipMinorFeatures14_CONV_INT16X8BIT_VIP_V7 : 0) |
+				(gChipInfo[i].NN_REMOVE_POOLING == 1 ? chipMinorFeatures14_NN_REMOVE_POOLING : 0) |
+				(gChipInfo[i].NN_40BIT_BIAS == 1 ? chipMinorFeatures14_NN_40BIT_BIAS : 0) |
+				(gChipInfo[i].TP_REMOVE_USC == 1 ? chipMinorFeatures14_TP_REMOVE_USC : 0) |
+				(gChipInfo[i].NN_ZDP6 == 1 ? chipMinorFeatures14_NN_ZDP6 : 0) |
+				(gChipInfo[i].NN_XYDP9 == 1 ? chipMinorFeatures14_NN_XYDP9 : 0) |
+				(gChipInfo[i].NN_FIRST_PIXEL_POOLING == 1 ? chipMinorFeatures14_NN_FIRST_PIXEL_POOLING : 0) |
+				(gChipInfo[i].NN_ZDP3 == 1 ? chipMinorFeatures14_NN_ZDP3 : 0) |
+				(gChipInfo[i].NN_XYDP6 == 1 ? chipMinorFeatures14_NN_XYDP6 : 0) |
+				(gChipInfo[i].SWTILING_PHASE3 == 1 ? chipMinorFeatures14_SWTILING_PHASE3 : 0) |
+				(gChipInfo[i].USC_STAY_LRU == 1 ? chipMinorFeatures14_USC_STAY_LRU : 0) |
+				(gChipInfo[i].COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo[i].TP_COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_TP_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo[i].NN_COEF_DECOMPRESS_PERF2X == 1 ? chipMinorFeatures14_NN_COEF_DECOMPRESS_PERF2X : 0) |
+				(gChipInfo[i].TP_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures14_TP_SMALLBATCH_PHASE1 : 0) |
+				(gChipInfo[i].OCB_COUNTER == 1 ? chipMinorFeatures14_OCB_COUNTER : 0) |
+				(gChipInfo[i].SCALER == 1 ? chipMinorFeatures14_SCALER : 0) |
+				(gChipInfo[i].SCALER_4K == 1 ? chipMinorFeatures14_SCALER_4K : 0) |
+				(gChipInfo[i].INPUT_4BIT == 1 ? chipMinorFeatures14_INPUT_4BIT : 0) |
+				(gChipInfo[i].NN_NO_Z_LOCATION_OFFSET == 1 ? chipMinorFeatures14_NN_NO_Z_LOCATION_OFFSET : 0) |
+				(gChipInfo[i].OCB_REMAP_PHYSICAL_ADDRESS == 1 ? chipMinorFeatures14_OCB_REMAP_PHYSICAL_ADDRESS : 0) |
+				(gChipInfo[i].NN_SLOW_OUTPUT == 1 ? chipMinorFeatures14_NN_SLOW_OUTPUT : 0) |
+				(gChipInfo[i].NO_NARROW_POST_PROCESS_PIPE == 1 ? chipMinorFeatures14_NO_NARROW_POST_PROCESS_PIPE : 0) |
+				(gChipInfo[i].TP_NN_PROBE == 1 ? chipMinorFeatures14_TP_NN_PROBE : 0) |
+				(gChipInfo[i].NN_DEPTHWISE_SUPPORT == 1 ? chipMinorFeatures14_NN_DEPTHWISE_SUPPORT : 0) |
+				(gChipInfo[i].NN_XYDP0 == 1 ? chipMinorFeatures14_NN_XYDP0 : 0) |
+				(gChipInfo[i].NN_WRITE_WITHOUT_USC == 1 ? chipMinorFeatures14_NN_WRITE_WITHOUT_USC : 0) |
+				(gChipInfo[i].NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 == 1 ? chipMinorFeatures14_NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 : 0);
+			uint32_t features15 =
+				(gChipInfo[i].NN_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures15_NN_SMALLBATCH_PHASE1 : 0) |
+				(gChipInfo[i].NN_SLICE_PADDING_TO_64BYTE_ALIGN == 1 ? chipMinorFeatures15_NN_SLICE_PADDING_TO_64BYTE_ALIGN : 0) |
+				(gChipInfo[i].NN_DW_1x1_CONV_MERGE == 1 ? chipMinorFeatures15_NN_DW_1x1_CONV_MERGE : 0) |
+				(gChipInfo[i].TP_BFLOAT16 == 1 ? chipMinorFeatures15_TP_BFLOAT16 : 0) |
+				(gChipInfo[i].TP_23BITS_POST_MULTIPLIER == 1 ? chipMinorFeatures15_TP_23BITS_POST_MULTIPLIER : 0) |
+				(gChipInfo[i].NN_TRANSPOSE == 1 ? chipMinorFeatures15_NN_TRANSPOSE : 0) |
+				(gChipInfo[i].NN_ZDP_TRANSPOSE_CH9_ONLY == 1 ? chipMinorFeatures15_NN_ZDP_TRANSPOSE_CH9_ONLY : 0) |
+				(gChipInfo[i].USE_SINGLE_PORT_VIPSRAM == 1 ? chipMinorFeatures15_USE_SINGLE_PORT_VIPSRAM : 0) |
+				(gChipInfo[i].NN_LEAKY_RELU == 1 ? chipMinorFeatures15_NN_LEAKY_RELU : 0) |
+				(gChipInfo[i].NN_PRELU == 1 ? chipMinorFeatures15_NN_PRELU : 0) |
+				(gChipInfo[i].NN_PER_CHANNEL_QUANT == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT : 0) |
+				(gChipInfo[i].NN_PER_CHANNEL_QUANT_ASYM == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT_ASYM : 0) |
+				(gChipInfo[i].NN_ASYMMETRIC_INT8 == 1 ? chipMinorFeatures15_NN_ASYMMETRIC_INT8 : 0) |
+				(gChipInfo[i].NN_FLOAT_POST_MULT == 1 ? chipMinorFeatures15_NN_FLOAT_POST_MULT : 0) |
+				(gChipInfo[i].PRELU_LEAKLY_RELU_CLAMP == 1 ? chipMinorFeatures15_PRELU_LEAKLY_RELU_CLAMP : 0) |
+				(gChipInfo[i].TPLITE_BFLOAT16 == 1 ? chipMinorFeatures15_TPLITE_BFLOAT16 : 0) |
+				(gChipInfo[i].PREPROCESS_IMG_BUF_640BYTE_LIMIT == 1 ? chipMinorFeatures15_PREPROCESS_IMG_BUF_640BYTE_LIMIT : 0) |
+				(gChipInfo[i].NN_POST_OUT_SUPPORT_FP16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP16 : 0) |
+				(gChipInfo[i].NN_POST_OUT_SUPPORT_BF16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_BF16 : 0) |
+				(gChipInfo[i].NN_POST_OUT_SUPPORT_FP32 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP32 : 0) |
+				(gChipInfo[i].TP_KERNEL_1BYTE_ALGIN == 1 ? chipMinorFeatures15_TP_KERNEL_1BYTE_ALGIN : 0) |
+				(gChipInfo[i].BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE == 1 ? chipMinorFeatures15_BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE : 0) |
+				(gChipInfo[i].NN_COMPRESSION_BYPASSS == 1 ? chipMinorFeatures15_NN_COMPRESSION_BYPASSS : 0) |
+				(gChipInfo[i].TP_3_USC == 1 ? chipMinorFeatures15_TP_3_USC : 0) |
+				(gChipInfo[i].BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE == 1 ? chipMinorFeatures15_BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE : 0) |
+				(gChipInfo[i].NN_NATIVE_STRIDE_TWO == 1 ? chipMinorFeatures15_NN_NATIVE_STRIDE_TWO : 0) |
+				(gChipInfo[i].NN_TENSOR_ADD == 1 ? chipMinorFeatures15_NN_TENSOR_ADD : 0) |
+				(gChipInfo[i].TP_FLOAT32_IO == 1 ? chipMinorFeatures15_TP_FLOAT32_IO : 0) |
+				(gChipInfo[i].NN_SMALL_BATCH_PHASE2 == 1 ? chipMinorFeatures15_NN_SMALL_BATCH_PHASE2 : 0) |
+				(gChipInfo[i].TILE_ACCESS_CAPABILITY == 1 ? chipMinorFeatures15_TILE_ACCESS_CAPABILITY : 0) |
+				(gChipInfo[i].FAST_DP3_PREPROCESSOR == 1 ? chipMinorFeatures15_FAST_DP3_PREPROCESSOR : 0) |
+				(gChipInfo[i].DEPTHWISE_SUPPORT_16BIT_FORMAT == 1 ? chipMinorFeatures15_DEPTHWISE_SUPPORT_16BIT_FORMAT : 0);
+			uint32_t features16 =
+				(gChipInfo[i].NN_SUPPORT_ALU == 1 ? chipMinorFeatures16_NN_SUPPORT_ALU : 0) |
+				(gChipInfo[i].NN_ENHANCED_MAX_POOLING == 1 ? chipMinorFeatures16_NN_ENHANCED_MAX_POOLING : 0) |
+				(gChipInfo[i].NN_TRANSPOSE_PHASE2 == 1 ? chipMinorFeatures16_NN_TRANSPOSE_PHASE2 : 0) |
+				(gChipInfo[i].NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD : 0) |
+				(gChipInfo[i].NN_CMD_SUPPORT_SLICE == 1 ? chipMinorFeatures16_NN_CMD_SUPPORT_SLICE : 0) |
+				(gChipInfo[i].NN_CONV_CORE_BYPASS == 1 ? chipMinorFeatures16_NN_CONV_CORE_BYPASS : 0) |
+				(gChipInfo[i].NN_TENSOR_ADD_RELU == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_RELU : 0) |
+				(gChipInfo[i].TPLITE_SUPPORT_TP_DATA_TRANSPOSE == 1 ? chipMinorFeatures16_TPLITE_SUPPORT_TP_DATA_TRANSPOSE : 0) |
+				(gChipInfo[i].NN_SUPPORT_CONV_1D == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV_1D : 0) |
+				(gChipInfo[i].USE_VIPSRAM_FOR_KERNEL_STREAMING == 1 ? chipMinorFeatures16_USE_VIPSRAM_FOR_KERNEL_STREAMING : 0) |
+				(gChipInfo[i].NN_SUPPORT_DUMMY_TILE == 1 ? chipMinorFeatures16_NN_SUPPORT_DUMMY_TILE : 0) |
+				(gChipInfo[i].NN_SUPPORT_KERNEL_1BYTE_ALIGN == 1 ? chipMinorFeatures16_NN_SUPPORT_KERNEL_1BYTE_ALIGN : 0) |
+				(gChipInfo[i].NN_1x1_NON_POOLING_PACKING == 1 ? chipMinorFeatures16_NN_1x1_NON_POOLING_PACKING : 0) |
+				(gChipInfo[i].NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING == 1 ? chipMinorFeatures16_NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING : 0) |
+				(gChipInfo[i].NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 : 0) |
+				(gChipInfo[i].TP_REMOVE_FC == 1 ? chipMinorFeatures16_TP_REMOVE_FC : 0) |
+				(gChipInfo[i].VIP_REMOVE_MMU == 1 ? chipMinorFeatures16_VIP_REMOVE_MMU : 0) |
+				(gChipInfo[i].NN_RD_IMG_NEED_EXTRA_SPACE == 1 ? chipMinorFeatures16_NN_RD_IMG_NEED_EXTRA_SPACE : 0) |
+				(gChipInfo[i].VIP_INDIV_CLK_NN == 1 ? chipMinorFeatures16_VIP_INDIV_CLK_NN : 0) |
+				(gChipInfo[i].VIP_EXPORT_CLK_DIV2 == 1 ? chipMinorFeatures16_VIP_EXPORT_CLK_DIV2 : 0) |
+				(gChipInfo[i].NN_2D_AVERAGE_OUTPUT == 1 ? chipMinorFeatures16_NN_2D_AVERAGE_OUTPUT : 0) |
+				(gChipInfo[i].NN_JOB_CANCELATION == 1 ? chipMinorFeatures16_NN_JOB_CANCELATION : 0) |
+				(gChipInfo[i].NN_SUPPORT_GEMM == 1 ? chipMinorFeatures16_NN_SUPPORT_GEMM : 0) |
+				(gChipInfo[i].NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE == 1 ? chipMinorFeatures16_NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE : 0) |
+				(gChipInfo[i].NN_SUPPORT_BATCH == 1 ? chipMinorFeatures16_NN_SUPPORT_BATCH : 0) |
+				(gChipInfo[i].VIP_SUPPORT_DEC == 1 ? chipMinorFeatures16_VIP_SUPPORT_DEC : 0) |
+				(gChipInfo[i].NN_SUPPORT_MULTI_AXI_ID == 1 ? chipMinorFeatures16_NN_SUPPORT_MULTI_AXI_ID : 0) |
+				(gChipInfo[i].NN_POST_OUT_SUPPORT_INT32 == 1 ? chipMinorFeatures16_NN_POST_OUT_SUPPORT_INT32 : 0) |
+				(gChipInfo[i].NN_SUPPORT_STREAMPROCESSOR == 1 ? chipMinorFeatures16_NN_SUPPORT_STREAMPROCESSOR : 0) |
+				(gChipInfo[i].NN_DISTRIBUTED_VIPSRAM == 1 ? chipMinorFeatures16_NN_DISTRIBUTED_VIPSRAM : 0) |
+				(gChipInfo[i].NN_FC_ENHANCEMENT == 1 ? chipMinorFeatures16_NN_FC_ENHANCEMENT : 0) |
+				(gChipInfo[i].NN_4BIT_PHASE1 == 1 ? chipMinorFeatures16_NN_4BIT_PHASE1 : 0);
+
+			uint32_t features17 =
+				(gChipInfo[i].VIP_DEC400 == 1 ? chipMinorFeatures17_VIP_DEC400 : 0) |
+				(gChipInfo[i].NN_POST_MULT_SUPPORT_FP_CONV == 1 ? chipMinorFeatures17_NN_POST_MULT_SUPPORT_FP_CONV : 0) |
+				(gChipInfo[i].NN_SUPPORT_16_8_QUANTIZATION == 1 ? chipMinorFeatures17_NN_SUPPORT_16_8_QUANTIZATION : 0) |
+				(gChipInfo[i].SPECIAL_8BIT_SIGN_ABS_CONV == 1 ? chipMinorFeatures17_SPECIAL_8BIT_SIGN_ABS_CONV : 0) |
+				(gChipInfo[i].NN_SUPPORT_CONFIGURABLE_FASTXDP3 == 1 ? chipMinorFeatures17_NN_SUPPORT_CONFIGURABLE_FASTXDP3 : 0) |
+				(gChipInfo[i].NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING == 1 ? chipMinorFeatures17_NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING : 0) |
+				(gChipInfo[i].SUPPORT_DECONVNxN_S_LESS_THAN_16 == 1 ? chipMinorFeatures17_SUPPORT_DECONVNxN_S_LESS_THAN_16 : 0) |
+				(gChipInfo[i].NN_PICOCORE_DEPTHWISE == 1 ? chipMinorFeatures17_NN_PICOCORE_DEPTHWISE : 0) |
+				(gChipInfo[i].VIP_SUPPORT_TENSOR_TRANSFER == 1 ? chipMinorFeatures17_VIP_SUPPORT_TENSOR_TRANSFER : 0) |
+				(gChipInfo[i].NN_SUPPORT_CMD_LOOP == 1 ? chipMinorFeatures17_NN_SUPPORT_CMD_LOOP : 0) |
+				(gChipInfo[i].VIP_SUPPORT_X_FRAME_COMPRESSION == 1 ? chipMinorFeatures17_VIP_SUPPORT_X_FRAME_COMPRESSION : 0) |
+				(gChipInfo[i].NN_SMALL_ACCUM == 1 ? chipMinorFeatures17_NN_SMALL_ACCUM : 0) |
+				(gChipInfo[i].NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM == 1 ? chipMinorFeatures17_NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM : 0) |
+				(gChipInfo[i].POST_MULTIPLIER_LOW_POWER_MODE == 1 ? chipMinorFeatures17_POST_MULTIPLIER_LOW_POWER_MODE : 0) |
+				(gChipInfo[i].NN_PER3DTILE_BUBBLE_FIX == 1 ? chipMinorFeatures17_NN_PER3DTILE_BUBBLE_FIX : 0) |
+				(gChipInfo[i].NN_CACHELINE_MODE_PERF_FIX == 1 ? chipMinorFeatures17_NN_CACHELINE_MODE_PERF_FIX : 0) |
+				(gChipInfo[i].NN_CONV1x1_PERF_FIX == 1 ? chipMinorFeatures17_NN_CONV1x1_PERF_FIX : 0) |
+				(gChipInfo[i].TP_REORDER_FIX == 1 ? chipMinorFeatures17_TP_REORDER_FIX : 0) |
+				(gChipInfo[i].NN_CONVOUT_FIFO_DEPTH_FIX == 1 ? chipMinorFeatures17_NN_CONVOUT_FIFO_DEPTH_FIX : 0) |
+				(gChipInfo[i].NN_ZXDP3_KERNEL_READ_CONFLICT_FIX == 1 ? chipMinorFeatures17_NN_ZXDP3_KERNEL_READ_CONFLICT_FIX : 0) |
+				(gChipInfo[i].NN_ZDP3_NO_COMPRESS_FIX == 1 ? chipMinorFeatures17_NN_ZDP3_NO_COMPRESS_FIX : 0) |
+				(gChipInfo[i].NN_ASYNC_COPY_PERF_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_PERF_FIX : 0) |
+				(gChipInfo[i].HI_REORDER_FIX == 1 ? chipMinorFeatures17_HI_REORDER_FIX : 0) |
+				(gChipInfo[i].INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX == 1 ? chipMinorFeatures17_INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX : 0) |
+				(gChipInfo[i].TP_REORDER_LAYER_SUSPEND_FIX == 1 ? chipMinorFeatures17_TP_REORDER_LAYER_SUSPEND_FIX : 0) |
+				(gChipInfo[i].NN_ASYNC_COPY_MERGE_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_MERGE_FIX : 0) |
+				(gChipInfo[i].USC_INVALIDATE_CACHE_LINE_FIX == 1 ? chipMinorFeatures17_USC_INVALIDATE_CACHE_LINE_FIX : 0) |
+				(gChipInfo[i].NN_REQ_SLOWARBITRATION_FIX == 1 ? chipMinorFeatures17_NN_REQ_SLOWARBITRATION_FIX : 0) |
+				(gChipInfo[i].IMAGE_PARTIAL_CACHE_FIX == 1 ? chipMinorFeatures17_IMAGE_PARTIAL_CACHE_FIX : 0) |
+				(gChipInfo[i].FULLCACHE_KERNELHEAD_FIX == 1 ? chipMinorFeatures17_FULLCACHE_KERNELHEAD_FIX : 0) |
+				(gChipInfo[i].NN_ZDP_INIMAGE_SIZE_FIX == 1 ? chipMinorFeatures17_NN_ZDP_INIMAGE_SIZE_FIX : 0) |
+				(gChipInfo[i].IDLE_BEFORE_FLUSH_COMPLETE_FIX == 1 ? chipMinorFeatures17_IDLE_BEFORE_FLUSH_COMPLETE_FIX : 0);
+
+			uint32_t features18 =
+				(gChipInfo[i].NO_FLUSH_USC_FIX == 1 ? chipMinorFeatures18_NO_FLUSH_USC_FIX : 0) |
+				(gChipInfo[i].SMALL_BATCH_FLOPS_RESET_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_FLOPS_RESET_FIX : 0) |
+				(gChipInfo[i].SMALL_BATCH_DISBLE_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_DISBLE_FIX : 0) |
+				(gChipInfo[i].OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX == 1 ? chipMinorFeatures18_OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX : 0) |
+				(gChipInfo[i].IMAGE_NOT_PACKED_IN_SRAM_FIX == 1 ? chipMinorFeatures18_IMAGE_NOT_PACKED_IN_SRAM_FIX : 0) |
+				(gChipInfo[i].COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX == 1 ? chipMinorFeatures18_COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX : 0) |
+				(gChipInfo[i].USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX == 1 ? chipMinorFeatures18_USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX : 0) |
+				(gChipInfo[i].LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX == 1 ? chipMinorFeatures18_LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX : 0) |
+				(gChipInfo[i].KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX == 1 ? chipMinorFeatures18_KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX : 0) |
+				(gChipInfo[i].USC_BOTTLENECK_FIX == 1 ? chipMinorFeatures18_USC_BOTTLENECK_FIX : 0) |
+				(gChipInfo[i].KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX == 1 ? chipMinorFeatures18_KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX : 0) |
+				(gChipInfo[i].NN_TILE_NUM_BIGGER_THAN_1024_FIX == 1 ? chipMinorFeatures18_NN_TILE_NUM_BIGGER_THAN_1024_FIX : 0) |
+				(gChipInfo[i].KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX == 1 ? chipMinorFeatures18_KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX : 0) |
+				(gChipInfo[i].NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX == 1 ? chipMinorFeatures18_NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX : 0) |
+				(gChipInfo[i].TP_REORDER_INTILE_X_SIZE_512_FIX == 1 ? chipMinorFeatures18_TP_REORDER_INTILE_X_SIZE_512_FIX : 0) |
+				(gChipInfo[i].IMG_POP_PIPELINE_PAUSE_FIX == 1 ? chipMinorFeatures18_IMG_POP_PIPELINE_PAUSE_FIX : 0) |
+				(gChipInfo[i].FULLCACHE_KERNEL_INTERLEAVE_FIX == 1 ? chipMinorFeatures18_FULLCACHE_KERNEL_INTERLEAVE_FIX : 0) |
+				(gChipInfo[i].V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX == 1 ? chipMinorFeatures18_V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX : 0) |
+				(gChipInfo[i].V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX == 1 ? chipMinorFeatures18_V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX : 0) |
+				(gChipInfo[i].DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX == 1 ? chipMinorFeatures18_DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX : 0) |
+				(gChipInfo[i].DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX == 1 ? chipMinorFeatures18_DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX : 0) |
+				(gChipInfo[i].TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX == 1 ? chipMinorFeatures18_TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX : 0) |
+				(gChipInfo[i].EVIS2_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_EVIS2_FLOP_RESET_FIX : 0) |
+				(gChipInfo[i].OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX == 1 ? chipMinorFeatures18_OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX : 0) |
+				(gChipInfo[i].USC_ASYNC_CP_RTN_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_USC_ASYNC_CP_RTN_FLOP_RESET_FIX : 0) |
+				(gChipInfo[i].IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX == 1 ? chipMinorFeatures18_IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX : 0) |
+				(gChipInfo[i].NEGATIVE_POST_SHIFT_FIX == 1 ? chipMinorFeatures18_NEGATIVE_POST_SHIFT_FIX : 0) |
+				(gChipInfo[i].INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX == 1 ? chipMinorFeatures18_INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX : 0) |
+				(gChipInfo[i].IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX == 1 ? chipMinorFeatures18_IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX : 0) |
+				(gChipInfo[i].BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX == 1 ? chipMinorFeatures18_BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX : 0) |
+				(gChipInfo[i].INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX == 1 ? chipMinorFeatures18_INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX : 0) |
+				(gChipInfo[i].TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX == 1 ? chipMinorFeatures18_TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX : 0);
+
+			uint32_t features19 =
+				(gChipInfo[i].NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX == 1 ? chipMinorFeatures19_NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX : 0) |
+				(gChipInfo[i].NN_IN_TILE_DATA_IS_ALL_PAD_FIX == 1 ? chipMinorFeatures19_NN_IN_TILE_DATA_IS_ALL_PAD_FIX : 0) |
+				(gChipInfo[i].NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX == 1 ? chipMinorFeatures19_NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX : 0) |
+				(gChipInfo[i].CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX == 1 ? chipMinorFeatures19_CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX : 0) |
+				(gChipInfo[i].TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX == 1 ? chipMinorFeatures19_TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX : 0) |
+				(gChipInfo[i].NN_KERNEL_1x1_NO_PAD_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_1x1_NO_PAD_FIX : 0) |
+				(gChipInfo[i].NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX : 0) |
+				(gChipInfo[i].TP_NOT_FULL_USE_CACHE_LINE_FIX == 1 ? chipMinorFeatures19_TP_NOT_FULL_USE_CACHE_LINE_FIX : 0) |
+				(gChipInfo[i].SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX == 1 ? chipMinorFeatures19_SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX : 0) |
+				(gChipInfo[i].BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX == 1 ? chipMinorFeatures19_BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX : 0) |
+				(gChipInfo[i].TP_ASSYM_INT8_FIX == 1 ? chipMinorFeatures19_TP_ASSYM_INT8_FIX : 0) |
+				(gChipInfo[i].NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX == 1 ? chipMinorFeatures19_NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX : 0) |
+				(gChipInfo[i].NN_2ND_IMG_BASE_ADDR_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_BASE_ADDR_FIX : 0) |
+				(gChipInfo[i].NN_TP_SYSTEM_FIX == 1 ? chipMinorFeatures19_NN_TP_SYSTEM_FIX : 0) |
+				(gChipInfo[i].NN_INTILE_YSIZE_128_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_INTILE_YSIZE_128_LIMIT_FIX : 0) |
+				(gChipInfo[i].SH_CLOCK_GATOR_IDLE_CONDITON_FIX == 1 ? chipMinorFeatures19_SH_CLOCK_GATOR_IDLE_CONDITON_FIX : 0) |
+				(gChipInfo[i].NN_BURST_COLLECTER_LAST_FLAG_FIX == 1 ? chipMinorFeatures19_NN_BURST_COLLECTER_LAST_FLAG_FIX : 0) |
+				(gChipInfo[i].V83_CONVERTER_FOR_NEG_0_FIX == 1 ? chipMinorFeatures19_V83_CONVERTER_FOR_NEG_0_FIX : 0) |
+				(gChipInfo[i].NN_2ND_IMG_SMALL_3D_TILE_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_SMALL_3D_TILE_FIX : 0) |
+				(gChipInfo[i].NN_TILE_YSIZE_127_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_TILE_YSIZE_127_LIMITATION_FIX : 0) |
+				(gChipInfo[i].NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX : 0) |
+				(gChipInfo[i].NN_VIPSRAM_DOUBLE_BUFFER_FIX == 1 ? chipMinorFeatures19_NN_VIPSRAM_DOUBLE_BUFFER_FIX : 0) |
+				(gChipInfo[i].NN_JD_DIRECT_MODE_FIX == 1 ? chipMinorFeatures19_NN_JD_DIRECT_MODE_FIX : 0) |
+				(gChipInfo[i].NN_KERNEL_DIRECT_WRONG_PUSH_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_DIRECT_WRONG_PUSH_FIX : 0) |
+				(gChipInfo[i].HI_DEFAULT_ENABLE_REORDER_FIX == 1 ? chipMinorFeatures19_HI_DEFAULT_ENABLE_REORDER_FIX : 0) |
+				(gChipInfo[i].V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX == 1 ? chipMinorFeatures19_V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX : 0) |
+				(gChipInfo[i].V83_INTILESIZE_1X1_10BITS_FIX == 1 ? chipMinorFeatures19_V83_INTILESIZE_1X1_10BITS_FIX : 0) |
+				(gChipInfo[i].FASTXDP3_ONLY_IN_DEPTHWISE_FIX == 1 ? chipMinorFeatures19_FASTXDP3_ONLY_IN_DEPTHWISE_FIX : 0) |
+				(gChipInfo[i].USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX == 1 ? chipMinorFeatures19_USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX : 0) |
+				(gChipInfo[i].DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures19_DEPTHWISE_FLOAT_FIX : 0) |
+				(gChipInfo[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0) |
+				(gChipInfo[i].NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0);
+
+			uint32_t features20 =
+				(gChipInfo[i].CLOCK_DIV2_FREQ_CHANGE_FIX == 1 ? chipMinorFeatures20_CLOCK_DIV2_FREQ_CHANGE_FIX : 0) |
+				(gChipInfo[i].SMALL_TILE_TENSOR_ADD_FIX == 1 ? chipMinorFeatures20_SMALL_TILE_TENSOR_ADD_FIX : 0) |
+				(gChipInfo[i].DECOMPRESSOR_DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_DEPTHWISE_FLOAT_FIX : 0) |
+				(gChipInfo[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX == 1 ? chipMinorFeatures20_TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX : 0) |
+				(gChipInfo[i].V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX == 1 ? chipMinorFeatures20_V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX : 0) |
+				(gChipInfo[i].V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX : 0) |
+				(gChipInfo[i].V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX : 0) |
+				(gChipInfo[i].USC_RW_SAME_CACHELINE_UPDATE_FIX == 1 ? chipMinorFeatures20_USC_RW_SAME_CACHELINE_UPDATE_FIX : 0) |
+				(gChipInfo[i].NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX == 1 ? chipMinorFeatures20_NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX : 0) |
+				(gChipInfo[i].CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX == 1 ? chipMinorFeatures20_CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX : 0) |
+				(gChipInfo[i].KERNEL_XSIZE_YSIZE_NUM_FIX == 1 ? chipMinorFeatures20_KERNEL_XSIZE_YSIZE_NUM_FIX : 0) |
+				(gChipInfo[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX : 0) |
+				(gChipInfo[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX : 0) |
+				(gChipInfo[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX : 0) |
+				(gChipInfo[i].TP_SPECIAL_LIST_PARSER_FIX == 1 ? chipMinorFeatures20_TP_SPECIAL_LIST_PARSER_FIX : 0) |
+				(gChipInfo[i].DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX : 0) |
+				(gChipInfo[i].DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX == 1 ? chipMinorFeatures20_DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX : 0) |
+				(gChipInfo[i].SECONDIMG_TILE_SIDEBANFIFO_FIX == 1 ? chipMinorFeatures20_SECONDIMG_TILE_SIDEBANFIFO_FIX : 0) |
+				(gChipInfo[i].TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX == 1 ? chipMinorFeatures20_TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX : 0) |
+				(gChipInfo[i].NN_FP16_ALU == 1 ? chipMinorFeatures20_NN_FP16_ALU : 0) |
+				(gChipInfo[i].NN_INT16_ALU == 1 ? chipMinorFeatures20_NN_INT16_ALU : 0) |
+				(gChipInfo[i].NN_INT8_SCALE == 1 ? chipMinorFeatures20_NN_INT8_SCALE : 0) |
+				(gChipInfo[i].NN_POWER_ISOLATION == 1 ? chipMinorFeatures20_NN_POWER_ISOLATION : 0) |
+				(gChipInfo[i].ZRL_7BIT == 1 ? chipMinorFeatures20_ZRL_7BIT : 0) |
+				(gChipInfo[i].NN_SMALLBATCH == 1 ? chipMinorFeatures20_NN_SMALLBATCH : 0) |
+				(gChipInfo[i].TP_SMALLBATCH == 1 ? chipMinorFeatures20_TP_SMALLBATCH : 0) |
+				(gChipInfo[i].ZRL_8BIT == 1 ? chipMinorFeatures20_ZRL_8BIT : 0) |
+				(gChipInfo[i].DDR_BURST_LEN_256B == 1 ? chipMinorFeatures20_DDR_BURST_LEN_256B : 0) |
+				(gChipInfo[i].XY_OFFSET_LIMITATION_FIX == 1 ? chipMinorFeatures20_XY_OFFSET_LIMITATION_FIX : 0) |
+				(gChipInfo[i].NN_NONZERO_MIRROR_BORDER == 1 ? chipMinorFeatures20_NN_NONZERO_MIRROR_BORDER : 0) |
+				(gChipInfo[i].IMAGE_PARTIAL_CACHE == 1 ? chipMinorFeatures20_IMAGE_PARTIAL_CACHE : 0);
 #endif
 
 
@@ -624,6 +893,13 @@ int main()
 #if defined EXTENDED_FEATURE_LIST
 			linux_devices[count].minor_features12 = features12;
 			linux_devices[count].minor_features13 = features13;
+			linux_devices[count].minor_features14 = features14;
+			linux_devices[count].minor_features15 = features15;
+			linux_devices[count].minor_features16 = features16;
+			linux_devices[count].minor_features17 = features17;
+			linux_devices[count].minor_features18 = features18;
+			linux_devices[count].minor_features19 = features19;
+			linux_devices[count].minor_features20 = features20;
 #endif
 			count++;
 		}
@@ -1157,9 +1433,272 @@ int main()
 				(gChipInfo_STM32_4_6_7[i].FP32_TO_FP16_CONV_FIX == 1 ? chipMinorFeatures13_FP32_TO_FP16_CONV_FIX : 0) |
 				(gChipInfo_STM32_4_6_7[i].IMGLD_COMP_COUNT_FIX == 1 ? chipMinorFeatures13_IMGLD_COMP_COUNT_FIX : 0) |
 				(gChipInfo_STM32_4_6_7[i].IMGLD_WIDTH_LT16_FIX == 1 ? chipMinorFeatures13_IMGLD_WIDTH_LT16_FIX : 0) |
-				(gChipInfo_STM32_4_6_7[i].TX_FILTER_ROUND_FIX == 1 ? chipMinorFeatures13_TX_FILTER_ROUND_FIX : 0);
-#endif
+				(gChipInfo_STM32_4_6_7[i].TX_FILTER_ROUND_FIX == 1 ? chipMinorFeatures13_TX_FILTER_ROUND_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SH_FP32_FMA_SUPPORT == 1 ? chipMinorFeatures13_SH_FP32_FMA_SUPPORT : 0) |
+				//(gChipInfo_STM32_4_6_7[i].PE_64BPP_LINEAR_FORMAT == 1 ? chipMinorFeatures13_PE_64BPP_LINEAR_FORMAT : 0) |
+				(gChipInfo_STM32_4_6_7[i].TX_ETC2_COMPRESSION == 1 ? chipMinorFeatures13_TX_ETC2_COMPRESSION : 0) |
+				//(gChipInfo_STM32_4_6_7[i].HIGHP_VEC2 == 1 ? chipMinorFeatures13_HIGHP_VEC2 : 0) |
+				//(gChipInfo_STM32_4_6_7[i].MMU_PD_42_BIT_ADDRESS == 1 ? chipMinorFeatures13_MMU_PD_42_BIT_ADDRESS : 0) |
+				//(gChipInfo_STM32_4_6_7[i].BLT_ROBUSTNESS_FIX == 1 ? chipMinorFeatures13_BLT_ROBUSTNESS_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].TFB_PERF_FIX == 1 ? chipMinorFeatures13_TFB_PERF_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].SH_SUPERSCALAR_ARCH == 1 ? chipMinorFeatures13_SH_SUPERSCALAR_ARCH : 0) | 00
+				//(gChipInfo_STM32_4_6_7[i].PA_ZEROAREA_LINE_FIX == 1 ? chipMinorFeatures13_PA_ZEROAREA_LINE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].VG_IMAGE_16K == 1 ? chipMinorFeatures13_VG_IMAGE_16K : 0) |
+				(gChipInfo_STM32_4_6_7[i].VG_FORMAT_ARGB2222 == 1 ? chipMinorFeatures13_VG_FORMAT_ARGB2222 : 0) |
+				(gChipInfo_STM32_4_6_7[i].VIP_HW_FINAL_RELEASE == 1 ? chipMinorFeatures13_VIP_HW_FINAL_RELEASE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SINGLEPORT_ACCUMBUFFER == 1 ? chipMinorFeatures13_NN_SINGLEPORT_ACCUMBUFFER : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_STRIDE_SUPPORT == 1 ? chipMinorFeatures13_NN_STRIDE_SUPPORT : 0) |
+				(gChipInfo_STM32_4_6_7[i].SWTILING_PHASE1 == 1 ? chipMinorFeatures13_SWTILING_PHASE1 : 0) |
+				(gChipInfo_STM32_4_6_7[i].SWTILING_PHASE2 == 1 ? chipMinorFeatures13_SWTILING_PHASE2 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_SIMPLE_INT16 == 1 ? chipMinorFeatures13_TP_SIMPLE_INT16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REAL_INT16 == 1 ? chipMinorFeatures13_TP_REAL_INT16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_ROI_POOLING == 1 ? chipMinorFeatures13_TP_ROI_POOLING : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_MAX_POOLING_STRIDE1 == 1 ? chipMinorFeatures13_TP_MAX_POOLING_STRIDE1 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_LRN == 1 ? chipMinorFeatures13_TP_LRN : 0) |
+				(gChipInfo_STM32_4_6_7[i].TF_QUANTIZATION == 1 ? chipMinorFeatures13_TF_QUANTIZATION : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_NONZERO_BORDER == 1 ? chipMinorFeatures13_NN_NONZERO_BORDER : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_MIRROR_BORDER == 1 ? chipMinorFeatures13_NN_MIRROR_BORDER : 0) |
+				(gChipInfo_STM32_4_6_7[i].AI_GPU == 1 ? chipMinorFeatures13_AI_GPU : 0);
 
+			uint32_t features14 =
+				(gChipInfo_STM32_4_6_7[i].TP_TENSOR_ADD_MUL == 1 ? chipMinorFeatures13_TP_TENSOR_ADD_MUL : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DEPTHWISE_INT16XINT8 == 1 ? chipMinorFeatures13_NN_DEPTHWISE_INT16XINT8 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DEPTHWISE_8BIT_VIP_V7 == 1 ? chipMinorFeatures14_NN_DEPTHWISE_8BIT_VIP_V7 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_SOFTMAX == 1 ? chipMinorFeatures14_TP_SOFTMAX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_NN_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_TP_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				(gChipInfo_STM32_4_6_7[i].CONV_INT16X8BIT_VIP_V7 == 1 ? chipMinorFeatures14_CONV_INT16X8BIT_VIP_V7 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_REMOVE_POOLING == 1 ? chipMinorFeatures14_NN_REMOVE_POOLING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_40BIT_BIAS == 1 ? chipMinorFeatures14_NN_40BIT_BIAS : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REMOVE_USC == 1 ? chipMinorFeatures14_TP_REMOVE_USC : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZDP6 == 1 ? chipMinorFeatures14_NN_ZDP6 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_XYDP9 == 1 ? chipMinorFeatures14_NN_XYDP9 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_FIRST_PIXEL_POOLING == 1 ? chipMinorFeatures14_NN_FIRST_PIXEL_POOLING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZDP3 == 1 ? chipMinorFeatures14_NN_ZDP3 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_XYDP6 == 1 ? chipMinorFeatures14_NN_XYDP6 : 0) |
+				(gChipInfo_STM32_4_6_7[i].SWTILING_PHASE3 == 1 ? chipMinorFeatures14_SWTILING_PHASE3 : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_STAY_LRU == 1 ? chipMinorFeatures14_USC_STAY_LRU : 0) |
+				(gChipInfo_STM32_4_6_7[i].COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_TP_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_COEF_DECOMPRESS_PERF2X == 1 ? chipMinorFeatures14_NN_COEF_DECOMPRESS_PERF2X : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures14_TP_SMALLBATCH_PHASE1 : 0) |
+				(gChipInfo_STM32_4_6_7[i].OCB_COUNTER == 1 ? chipMinorFeatures14_OCB_COUNTER : 0) |
+				(gChipInfo_STM32_4_6_7[i].SCALER == 1 ? chipMinorFeatures14_SCALER : 0) |
+				(gChipInfo_STM32_4_6_7[i].SCALER_4K == 1 ? chipMinorFeatures14_SCALER_4K : 0) |
+				(gChipInfo_STM32_4_6_7[i].INPUT_4BIT == 1 ? chipMinorFeatures14_INPUT_4BIT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_NO_Z_LOCATION_OFFSET == 1 ? chipMinorFeatures14_NN_NO_Z_LOCATION_OFFSET : 0) |
+				(gChipInfo_STM32_4_6_7[i].OCB_REMAP_PHYSICAL_ADDRESS == 1 ? chipMinorFeatures14_OCB_REMAP_PHYSICAL_ADDRESS : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SLOW_OUTPUT == 1 ? chipMinorFeatures14_NN_SLOW_OUTPUT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NO_NARROW_POST_PROCESS_PIPE == 1 ? chipMinorFeatures14_NO_NARROW_POST_PROCESS_PIPE : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_NN_PROBE == 1 ? chipMinorFeatures14_TP_NN_PROBE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DEPTHWISE_SUPPORT == 1 ? chipMinorFeatures14_NN_DEPTHWISE_SUPPORT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_XYDP0 == 1 ? chipMinorFeatures14_NN_XYDP0 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_WRITE_WITHOUT_USC == 1 ? chipMinorFeatures14_NN_WRITE_WITHOUT_USC : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 == 1 ? chipMinorFeatures14_NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 : 0);
+
+			uint32_t features15 =
+				(gChipInfo_STM32_4_6_7[i].NN_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures15_NN_SMALLBATCH_PHASE1 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SLICE_PADDING_TO_64BYTE_ALIGN == 1 ? chipMinorFeatures15_NN_SLICE_PADDING_TO_64BYTE_ALIGN : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DW_1x1_CONV_MERGE == 1 ? chipMinorFeatures15_NN_DW_1x1_CONV_MERGE : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_BFLOAT16 == 1 ? chipMinorFeatures15_TP_BFLOAT16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_23BITS_POST_MULTIPLIER == 1 ? chipMinorFeatures15_TP_23BITS_POST_MULTIPLIER : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TRANSPOSE == 1 ? chipMinorFeatures15_NN_TRANSPOSE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZDP_TRANSPOSE_CH9_ONLY == 1 ? chipMinorFeatures15_NN_ZDP_TRANSPOSE_CH9_ONLY : 0) |
+				(gChipInfo_STM32_4_6_7[i].USE_SINGLE_PORT_VIPSRAM == 1 ? chipMinorFeatures15_USE_SINGLE_PORT_VIPSRAM : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_LEAKY_RELU == 1 ? chipMinorFeatures15_NN_LEAKY_RELU : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_PRELU == 1 ? chipMinorFeatures15_NN_PRELU : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_PER_CHANNEL_QUANT == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_PER_CHANNEL_QUANT_ASYM == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT_ASYM : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ASYMMETRIC_INT8 == 1 ? chipMinorFeatures15_NN_ASYMMETRIC_INT8 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_FLOAT_POST_MULT == 1 ? chipMinorFeatures15_NN_FLOAT_POST_MULT : 0) |
+				(gChipInfo_STM32_4_6_7[i].PRELU_LEAKLY_RELU_CLAMP == 1 ? chipMinorFeatures15_PRELU_LEAKLY_RELU_CLAMP : 0) |
+				(gChipInfo_STM32_4_6_7[i].TPLITE_BFLOAT16 == 1 ? chipMinorFeatures15_TPLITE_BFLOAT16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].PREPROCESS_IMG_BUF_640BYTE_LIMIT == 1 ? chipMinorFeatures15_PREPROCESS_IMG_BUF_640BYTE_LIMIT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_POST_OUT_SUPPORT_FP16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_POST_OUT_SUPPORT_BF16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_BF16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_POST_OUT_SUPPORT_FP32 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP32 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_KERNEL_1BYTE_ALGIN == 1 ? chipMinorFeatures15_TP_KERNEL_1BYTE_ALGIN : 0) |
+				(gChipInfo_STM32_4_6_7[i].BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE == 1 ? chipMinorFeatures15_BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_COMPRESSION_BYPASSS == 1 ? chipMinorFeatures15_NN_COMPRESSION_BYPASSS : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_3_USC == 1 ? chipMinorFeatures15_TP_3_USC : 0) |
+				(gChipInfo_STM32_4_6_7[i].BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE == 1 ? chipMinorFeatures15_BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_NATIVE_STRIDE_TWO == 1 ? chipMinorFeatures15_NN_NATIVE_STRIDE_TWO : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TENSOR_ADD == 1 ? chipMinorFeatures15_NN_TENSOR_ADD : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_FLOAT32_IO == 1 ? chipMinorFeatures15_TP_FLOAT32_IO : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SMALL_BATCH_PHASE2 == 1 ? chipMinorFeatures15_NN_SMALL_BATCH_PHASE2 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TILE_ACCESS_CAPABILITY == 1 ? chipMinorFeatures15_TILE_ACCESS_CAPABILITY : 0) |
+				(gChipInfo_STM32_4_6_7[i].FAST_DP3_PREPROCESSOR == 1 ? chipMinorFeatures15_FAST_DP3_PREPROCESSOR : 0) |
+				(gChipInfo_STM32_4_6_7[i].DEPTHWISE_SUPPORT_16BIT_FORMAT == 1 ? chipMinorFeatures15_DEPTHWISE_SUPPORT_16BIT_FORMAT : 0);
+
+			uint32_t features16 =
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_ALU == 1 ? chipMinorFeatures16_NN_SUPPORT_ALU : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ENHANCED_MAX_POOLING == 1 ? chipMinorFeatures16_NN_ENHANCED_MAX_POOLING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TRANSPOSE_PHASE2 == 1 ? chipMinorFeatures16_NN_TRANSPOSE_PHASE2 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_CMD_SUPPORT_SLICE == 1 ? chipMinorFeatures16_NN_CMD_SUPPORT_SLICE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CONV_CORE_BYPASS == 1 ? chipMinorFeatures16_NN_CONV_CORE_BYPASS : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TENSOR_ADD_RELU == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_RELU : 0) |
+				(gChipInfo_STM32_4_6_7[i].TPLITE_SUPPORT_TP_DATA_TRANSPOSE == 1 ? chipMinorFeatures16_TPLITE_SUPPORT_TP_DATA_TRANSPOSE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_CONV_1D == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV_1D : 0) |
+				(gChipInfo_STM32_4_6_7[i].USE_VIPSRAM_FOR_KERNEL_STREAMING == 1 ? chipMinorFeatures16_USE_VIPSRAM_FOR_KERNEL_STREAMING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_DUMMY_TILE == 1 ? chipMinorFeatures16_NN_SUPPORT_DUMMY_TILE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_KERNEL_1BYTE_ALIGN == 1 ? chipMinorFeatures16_NN_SUPPORT_KERNEL_1BYTE_ALIGN : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_1x1_NON_POOLING_PACKING == 1 ? chipMinorFeatures16_NN_1x1_NON_POOLING_PACKING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING == 1 ? chipMinorFeatures16_NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REMOVE_FC == 1 ? chipMinorFeatures16_TP_REMOVE_FC : 0) |
+				(gChipInfo_STM32_4_6_7[i].VIP_REMOVE_MMU == 1 ? chipMinorFeatures16_VIP_REMOVE_MMU : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_RD_IMG_NEED_EXTRA_SPACE == 1 ? chipMinorFeatures16_NN_RD_IMG_NEED_EXTRA_SPACE : 0) |
+				//(gChipInfo_STM32_4_6_7[i].VIP_INDIV_CLK_NN == 1 ? chipMinorFeatures16_VIP_INDIV_CLK_NN : 0) |
+				//(gChipInfo_STM32_4_6_7[i].VIP_EXPORT_CLK_DIV2 == 1 ? chipMinorFeatures16_VIP_EXPORT_CLK_DIV2 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_2D_AVERAGE_OUTPUT == 1 ? chipMinorFeatures16_NN_2D_AVERAGE_OUTPUT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_JOB_CANCELATION == 1 ? chipMinorFeatures16_NN_JOB_CANCELATION : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_GEMM == 1 ? chipMinorFeatures16_NN_SUPPORT_GEMM : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE == 1 ? chipMinorFeatures16_NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_BATCH == 1 ? chipMinorFeatures16_NN_SUPPORT_BATCH : 0) |
+				//(gChipInfo_STM32_4_6_7[i].VIP_SUPPORT_DEC == 1 ? chipMinorFeatures16_VIP_SUPPORT_DEC : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_MULTI_AXI_ID == 1 ? chipMinorFeatures16_NN_SUPPORT_MULTI_AXI_ID : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_POST_OUT_SUPPORT_INT32 == 1 ? chipMinorFeatures16_NN_POST_OUT_SUPPORT_INT32 : 0) |
+				//(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_STREAMPROCESSOR == 1 ? chipMinorFeatures16_NN_SUPPORT_STREAMPROCESSOR : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DISTRIBUTED_VIPSRAM == 1 ? chipMinorFeatures16_NN_DISTRIBUTED_VIPSRAM : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_FC_ENHANCEMENT == 1 ? chipMinorFeatures16_NN_FC_ENHANCEMENT : 0);
+				//(gChipInfo_STM32_4_6_7[i].NN_4BIT_PHASE1 == 1 ? chipMinorFeatures16_NN_4BIT_PHASE1 : 0);
+
+			uint32_t features17 =
+				(gChipInfo_STM32_4_6_7[i].VIP_DEC400 == 1 ? chipMinorFeatures17_VIP_DEC400 : 0) |
+				/*(gChipInfo_STM32_4_6_7[i].NN_POST_MULT_SUPPORT_FP_CONV == 1 ? chipMinorFeatures17_NN_POST_MULT_SUPPORT_FP_CONV : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_16_8_QUANTIZATION == 1 ? chipMinorFeatures17_NN_SUPPORT_16_8_QUANTIZATION : 0) |
+				(gChipInfo_STM32_4_6_7[i].SPECIAL_8BIT_SIGN_ABS_CONV == 1 ? chipMinorFeatures17_SPECIAL_8BIT_SIGN_ABS_CONV : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_CONFIGURABLE_FASTXDP3 == 1 ? chipMinorFeatures17_NN_SUPPORT_CONFIGURABLE_FASTXDP3 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING == 1 ? chipMinorFeatures17_NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING : 0) |
+				(gChipInfo_STM32_4_6_7[i].SUPPORT_DECONVNxN_S_LESS_THAN_16 == 1 ? chipMinorFeatures17_SUPPORT_DECONVNxN_S_LESS_THAN_16 : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_PICOCORE_DEPTHWISE == 1 ? chipMinorFeatures17_NN_PICOCORE_DEPTHWISE : 0) |
+				(gChipInfo_STM32_4_6_7[i].VIP_SUPPORT_TENSOR_TRANSFER == 1 ? chipMinorFeatures17_VIP_SUPPORT_TENSOR_TRANSFER : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SUPPORT_CMD_LOOP == 1 ? chipMinorFeatures17_NN_SUPPORT_CMD_LOOP : 0) |
+				(gChipInfo_STM32_4_6_7[i].VIP_SUPPORT_X_FRAME_COMPRESSION == 1 ? chipMinorFeatures17_VIP_SUPPORT_X_FRAME_COMPRESSION : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SMALL_ACCUM == 1 ? chipMinorFeatures17_NN_SMALL_ACCUM : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM == 1 ? chipMinorFeatures17_NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM : 0) |
+				(gChipInfo_STM32_4_6_7[i].POST_MULTIPLIER_LOW_POWER_MODE == 1 ? chipMinorFeatures17_POST_MULTIPLIER_LOW_POWER_MODE : 0) |*/
+				(gChipInfo_STM32_4_6_7[i].NN_PER3DTILE_BUBBLE_FIX == 1 ? chipMinorFeatures17_NN_PER3DTILE_BUBBLE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CACHELINE_MODE_PERF_FIX == 1 ? chipMinorFeatures17_NN_CACHELINE_MODE_PERF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CONV1x1_PERF_FIX == 1 ? chipMinorFeatures17_NN_CONV1x1_PERF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REORDER_FIX == 1 ? chipMinorFeatures17_TP_REORDER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CONVOUT_FIFO_DEPTH_FIX == 1 ? chipMinorFeatures17_NN_CONVOUT_FIFO_DEPTH_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZXDP3_KERNEL_READ_CONFLICT_FIX == 1 ? chipMinorFeatures17_NN_ZXDP3_KERNEL_READ_CONFLICT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZDP3_NO_COMPRESS_FIX == 1 ? chipMinorFeatures17_NN_ZDP3_NO_COMPRESS_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ASYNC_COPY_PERF_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_PERF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].HI_REORDER_FIX == 1 ? chipMinorFeatures17_HI_REORDER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX == 1 ? chipMinorFeatures17_INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REORDER_LAYER_SUSPEND_FIX == 1 ? chipMinorFeatures17_TP_REORDER_LAYER_SUSPEND_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ASYNC_COPY_MERGE_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_MERGE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_INVALIDATE_CACHE_LINE_FIX == 1 ? chipMinorFeatures17_USC_INVALIDATE_CACHE_LINE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_REQ_SLOWARBITRATION_FIX == 1 ? chipMinorFeatures17_NN_REQ_SLOWARBITRATION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMAGE_PARTIAL_CACHE_FIX == 1 ? chipMinorFeatures17_IMAGE_PARTIAL_CACHE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].FULLCACHE_KERNELHEAD_FIX == 1 ? chipMinorFeatures17_FULLCACHE_KERNELHEAD_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_ZDP_INIMAGE_SIZE_FIX == 1 ? chipMinorFeatures17_NN_ZDP_INIMAGE_SIZE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IDLE_BEFORE_FLUSH_COMPLETE_FIX == 1 ? chipMinorFeatures17_IDLE_BEFORE_FLUSH_COMPLETE_FIX : 0);
+
+			uint32_t features18 =
+				(gChipInfo_STM32_4_6_7[i].NO_FLUSH_USC_FIX == 1 ? chipMinorFeatures18_NO_FLUSH_USC_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SMALL_BATCH_FLOPS_RESET_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_FLOPS_RESET_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SMALL_BATCH_DISBLE_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_DISBLE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX == 1 ? chipMinorFeatures18_OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMAGE_NOT_PACKED_IN_SRAM_FIX == 1 ? chipMinorFeatures18_IMAGE_NOT_PACKED_IN_SRAM_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX == 1 ? chipMinorFeatures18_COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX == 1 ? chipMinorFeatures18_USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX == 1 ? chipMinorFeatures18_LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX == 1 ? chipMinorFeatures18_KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_BOTTLENECK_FIX == 1 ? chipMinorFeatures18_USC_BOTTLENECK_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX == 1 ? chipMinorFeatures18_KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TILE_NUM_BIGGER_THAN_1024_FIX == 1 ? chipMinorFeatures18_NN_TILE_NUM_BIGGER_THAN_1024_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX == 1 ? chipMinorFeatures18_KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX == 1 ? chipMinorFeatures18_NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_REORDER_INTILE_X_SIZE_512_FIX == 1 ? chipMinorFeatures18_TP_REORDER_INTILE_X_SIZE_512_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMG_POP_PIPELINE_PAUSE_FIX == 1 ? chipMinorFeatures18_IMG_POP_PIPELINE_PAUSE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].FULLCACHE_KERNEL_INTERLEAVE_FIX == 1 ? chipMinorFeatures18_FULLCACHE_KERNEL_INTERLEAVE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX == 1 ? chipMinorFeatures18_V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX == 1 ? chipMinorFeatures18_V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX == 1 ? chipMinorFeatures18_DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX == 1 ? chipMinorFeatures18_DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX == 1 ? chipMinorFeatures18_TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].EVIS2_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_EVIS2_FLOP_RESET_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX == 1 ? chipMinorFeatures18_OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_ASYNC_CP_RTN_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_USC_ASYNC_CP_RTN_FLOP_RESET_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX == 1 ? chipMinorFeatures18_IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NEGATIVE_POST_SHIFT_FIX == 1 ? chipMinorFeatures18_NEGATIVE_POST_SHIFT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX == 1 ? chipMinorFeatures18_INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX == 1 ? chipMinorFeatures18_IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX == 1 ? chipMinorFeatures18_BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX == 1 ? chipMinorFeatures18_INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX == 1 ? chipMinorFeatures18_TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX : 0);
+
+			uint32_t features19 =
+				(gChipInfo_STM32_4_6_7[i].NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX == 1 ? chipMinorFeatures19_NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_IN_TILE_DATA_IS_ALL_PAD_FIX == 1 ? chipMinorFeatures19_NN_IN_TILE_DATA_IS_ALL_PAD_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX == 1 ? chipMinorFeatures19_NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX == 1 ? chipMinorFeatures19_CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX == 1 ? chipMinorFeatures19_TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_KERNEL_1x1_NO_PAD_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_1x1_NO_PAD_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_NOT_FULL_USE_CACHE_LINE_FIX == 1 ? chipMinorFeatures19_TP_NOT_FULL_USE_CACHE_LINE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX == 1 ? chipMinorFeatures19_SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX == 1 ? chipMinorFeatures19_BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_ASSYM_INT8_FIX == 1 ? chipMinorFeatures19_TP_ASSYM_INT8_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX == 1 ? chipMinorFeatures19_NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_2ND_IMG_BASE_ADDR_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_BASE_ADDR_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TP_SYSTEM_FIX == 1 ? chipMinorFeatures19_NN_TP_SYSTEM_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_INTILE_YSIZE_128_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_INTILE_YSIZE_128_LIMIT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SH_CLOCK_GATOR_IDLE_CONDITON_FIX == 1 ? chipMinorFeatures19_SH_CLOCK_GATOR_IDLE_CONDITON_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_BURST_COLLECTER_LAST_FLAG_FIX == 1 ? chipMinorFeatures19_NN_BURST_COLLECTER_LAST_FLAG_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].V83_CONVERTER_FOR_NEG_0_FIX == 1 ? chipMinorFeatures19_V83_CONVERTER_FOR_NEG_0_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_2ND_IMG_SMALL_3D_TILE_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_SMALL_3D_TILE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_TILE_YSIZE_127_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_TILE_YSIZE_127_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_VIPSRAM_DOUBLE_BUFFER_FIX == 1 ? chipMinorFeatures19_NN_VIPSRAM_DOUBLE_BUFFER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_JD_DIRECT_MODE_FIX == 1 ? chipMinorFeatures19_NN_JD_DIRECT_MODE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_KERNEL_DIRECT_WRONG_PUSH_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_DIRECT_WRONG_PUSH_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].HI_DEFAULT_ENABLE_REORDER_FIX == 1 ? chipMinorFeatures19_HI_DEFAULT_ENABLE_REORDER_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX == 1 ? chipMinorFeatures19_V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V83_INTILESIZE_1X1_10BITS_FIX == 1 ? chipMinorFeatures19_V83_INTILESIZE_1X1_10BITS_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].FASTXDP3_ONLY_IN_DEPTHWISE_FIX == 1 ? chipMinorFeatures19_FASTXDP3_ONLY_IN_DEPTHWISE_FIX : 0) |
+				//(gChipInfo_STM32_4_6_7[i].USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX == 1 ? chipMinorFeatures19_USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures19_DEPTHWISE_FLOAT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0);
+
+			uint32_t features20 =
+				(gChipInfo_STM32_4_6_7[i].CLOCK_DIV2_FREQ_CHANGE_FIX == 1 ? chipMinorFeatures20_CLOCK_DIV2_FREQ_CHANGE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SMALL_TILE_TENSOR_ADD_FIX == 1 ? chipMinorFeatures20_SMALL_TILE_TENSOR_ADD_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DECOMPRESSOR_DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_DEPTHWISE_FLOAT_FIX : 0) |
+				/*(gChipInfo_STM32_4_6_7[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX == 1 ? chipMinorFeatures20_TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX == 1 ? chipMinorFeatures20_V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].USC_RW_SAME_CACHELINE_UPDATE_FIX == 1 ? chipMinorFeatures20_USC_RW_SAME_CACHELINE_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX == 1 ? chipMinorFeatures20_NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX == 1 ? chipMinorFeatures20_CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].KERNEL_XSIZE_YSIZE_NUM_FIX == 1 ? chipMinorFeatures20_KERNEL_XSIZE_YSIZE_NUM_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_SPECIAL_LIST_PARSER_FIX == 1 ? chipMinorFeatures20_TP_SPECIAL_LIST_PARSER_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX == 1 ? chipMinorFeatures20_DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].SECONDIMG_TILE_SIDEBANFIFO_FIX == 1 ? chipMinorFeatures20_SECONDIMG_TILE_SIDEBANFIFO_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX == 1 ? chipMinorFeatures20_TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX : 0) |*/
+				(gChipInfo_STM32_4_6_7[i].NN_FP16_ALU == 1 ? chipMinorFeatures20_NN_FP16_ALU : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_INT16_ALU == 1 ? chipMinorFeatures20_NN_INT16_ALU : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_INT8_SCALE == 1 ? chipMinorFeatures20_NN_INT8_SCALE : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_POWER_ISOLATION == 1 ? chipMinorFeatures20_NN_POWER_ISOLATION : 0) |
+				(gChipInfo_STM32_4_6_7[i].ZRL_7BIT == 1 ? chipMinorFeatures20_ZRL_7BIT : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_SMALLBATCH == 1 ? chipMinorFeatures20_NN_SMALLBATCH : 0) |
+				(gChipInfo_STM32_4_6_7[i].TP_SMALLBATCH == 1 ? chipMinorFeatures20_TP_SMALLBATCH : 0) |
+				(gChipInfo_STM32_4_6_7[i].ZRL_8BIT == 1 ? chipMinorFeatures20_ZRL_8BIT : 0) |
+				(gChipInfo_STM32_4_6_7[i].DDR_BURST_LEN_256B == 1 ? chipMinorFeatures20_DDR_BURST_LEN_256B : 0) |
+				(gChipInfo_STM32_4_6_7[i].XY_OFFSET_LIMITATION_FIX == 1 ? chipMinorFeatures20_XY_OFFSET_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_4_6_7[i].NN_NONZERO_MIRROR_BORDER == 1 ? chipMinorFeatures20_NN_NONZERO_MIRROR_BORDER : 0) |
+				(gChipInfo_STM32_4_6_7[i].IMAGE_PARTIAL_CACHE == 1 ? chipMinorFeatures20_IMAGE_PARTIAL_CACHE : 0);
+#endif
 
 			linux_devices[count].features = feature;
 			linux_devices[count].minor_features0 = features0;
@@ -1177,6 +1716,13 @@ int main()
 #if defined EXTENDED_FEATURE_LIST
 			linux_devices[count].minor_features12 = features12;
 			linux_devices[count].minor_features13 = features13;
+			linux_devices[count].minor_features14 = features14;
+			linux_devices[count].minor_features15 = features15;
+			linux_devices[count].minor_features16 = features16;
+			linux_devices[count].minor_features17 = features17;
+			linux_devices[count].minor_features18 = features18;
+			linux_devices[count].minor_features19 = features19;
+			linux_devices[count].minor_features20 = features20;
 #endif
 			count++;
 		}
@@ -1640,7 +2186,342 @@ int main()
 				(gChipInfo_STM32_6_2_4[i].FENCE_64BIT == 1 ? chipMinorFeatures11_FENCE_64BIT : 0) |
 				(gChipInfo_STM32_6_2_4[i].NN_INTERLEVE8 == 1 ? chipMinorFeatures11_NN_INTERLEVE8 : 0) |
 				(gChipInfo_STM32_6_2_4[i].PE_DEPTH_ONLY_OQFIX == 1 ? chipMinorFeatures11_PE_DEPTH_ONLY_OQFIX : 0) |
+#if defined EXTENDED_FEATURE_LIST
+				(gChipInfo_STM32_6_2_4[i].TX_SEAMLESS_CUBE == 1 ? chipMinorFeatures11_TX_SEAMLESS_CUBE : 0) |
+				(gChipInfo_STM32_6_2_4[i].TX_SNORM_SUPPORT == 1 ? chipMinorFeatures11_TX_SNORM_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_SCATTER_GATHER == 1 ? chipMinorFeatures11_SH_SCATTER_GATHER : 0) |
+				(gChipInfo_STM32_6_2_4[i].HWMANAGED_LS == 1 ? chipMinorFeatures11_HWMANAGED_LS : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_IMAGE_ENABLE_FIX == 1 ? chipMinorFeatures11_SH_IMAGE_ENABLE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].MSAA_FRAGMENT_OPERATION == 1 ? chipMinorFeatures11_MSAA_FRAGMENT_OPERATION : 0) |
+				(gChipInfo_STM32_6_2_4[i].PE_TILE_CACHE_FLUSH_FIX == 1 ? chipMinorFeatures11_PE_TILE_CACHE_FLUSH_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].BLT_YUV_OUTPUT == 1 ? chipMinorFeatures11_BLT_YUV_OUTPUT : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_IO_CG_FIX == 1 ? chipMinorFeatures11_SH_IO_CG_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_ROBUSTNESS_FIX == 1 ? chipMinorFeatures11_SH_ROBUSTNESS_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_ATOMIC_FIX2 == 1 ? chipMinorFeatures11_USC_ATOMIC_FIX2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].PE_A8B8G8R8 == 1 ? chipMinorFeatures11_PE_A8B8G8R8 : 0) |
+				(gChipInfo_STM32_6_2_4[i].MULTIVIEW_RENDER == 1 ? chipMinorFeatures11_MULTIVIEW_RENDER : 0) |
+				(gChipInfo_STM32_6_2_4[i].FE_DRAW_DIRECT == 1 ? chipMinorFeatures11_FE_DRAW_DIRECT : 0) |
+				(gChipInfo_STM32_6_2_4[i].TX_VKBORDER_MODE == 1 ? chipMinorFeatures11_TX_VKBORDER_MODE : 0) |
+				(gChipInfo_STM32_6_2_4[i].TX_UNNORMALIZED_COORD == 1 ? chipMinorFeatures11_TX_UNNORMALIZED_COORD : 0) |
+				(gChipInfo_STM32_6_2_4[i].PA_LINECLIP_FIX == 1 ? chipMinorFeatures11_PA_LINECLIP_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TX_8bit_UVFrac_ROUNDING_FIX == 1 ? chipMinorFeatures11_TX_8bit_UVFrac_ROUNDING_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].MP_ARCH == 1 ? chipMinorFeatures11_MP_ARCH : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TX_NO_FIXED_FILTER == 1 ? chipMinorFeatures11_TX_NO_FIXED_FILTER : 0) |
+				//(gChipInfo_STM32_6_2_4[i].SHARE_Z == 1 ? chipMinorFeatures11_SHARE_Z : 0) |
+				//(gChipInfo_STM32_6_2_4[i].DE_2D_FAST_CLEAR == 1 ? chipMinorFeatures11_DE_2D_FAST_CLEAR : 0) |
+				//(gChipInfo_STM32_6_2_4[i].DE_TILESTATUS_ROTATION_FIX == 1 ? chipMinorFeatures11_DE_TILESTATUS_ROTATION_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TX_CLEAR_PENDING_FIX == 1 ? chipMinorFeatures11_TX_CLEAR_PENDING_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].HI1_L2_CACHE == 1 ? chipMinorFeatures11_HI1_L2_CACHE : 0) |
+				//(gChipInfo_STM32_6_2_4[i].USC_EVICT_CTRL_FIFO_FLOP_RESET_FIX == 1 ? chipMinorFeatures11_USC_EVICT_CTRL_FIFO_FLOP_RESET_FIX : 0) |
+#endif
 				(gChipInfo_STM32_6_2_4[i].TP_REORDER == 1 ? chipMinorFeatures11_TP_REORDER : 0);
+
+#if defined EXTENDED_FEATURE_LIST
+			uint32_t features12 = 0;
+				/*(gChipInfo_STM32_6_2_4[i].FORMAT_10BIT_CROSS_4K == 1 ? chipMinorFeatures12_FORMAT_10BIT_CROSS_4K : 0) |
+				(gChipInfo_STM32_6_2_4[i].FORMAT_P010LSB_I010 == 1 ? chipMinorFeatures12_FORMAT_P010LSB_I010 : 0) |
+				(gChipInfo_STM32_6_2_4[i].ENDIAN_CONTROL == 1 ? chipMinorFeatures12_ENDIAN_CONTROL : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_RGB_PLANAR == 1 ? chipMinorFeatures12_G2D_RGB_PLANAR : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_RGB_PLANAR_SOURCE == 1 ? chipMinorFeatures12_G2D_RGB_PLANAR_SOURCE : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_DEC400EX == 1 ? chipMinorFeatures12_G2D_DEC400EX : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_FC_IN_DEC400EX == 1 ? chipMinorFeatures12_G2D_FC_IN_DEC400EX : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_NO_YUV420_SOURCE == 1 ? chipMinorFeatures12_G2D_NO_YUV420_SOURCE : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_YUV420_101010 == 1 ? chipMinorFeatures12_G2D_YUV420_101010 : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_MultiSrcBlt_Pipe == 1 ? chipMinorFeatures12_G2D_MultiSrcBlt_Pipe : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_Stretch_MultiSrc_Pipe == 1 ? chipMinorFeatures12_G2D_Stretch_MultiSrc_Pipe : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_Normalization == 1 ? chipMinorFeatures12_G2D_Normalization : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_Normalization_Quantization == 1 ? chipMinorFeatures12_G2D_Normalization_Quantization : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_FRAME_DONE_INTR == 1 ? chipMinorFeatures12_G2D_FRAME_DONE_INTR : 0) |
+				(gChipInfo_STM32_6_2_4[i].G2D_MASK_AND_COLORKEY == 1 ? chipMinorFeatures12_G2D_MASK_AND_COLORKEY : 0) |
+				(gChipInfo_STM32_6_2_4[i].AXIFE == 1 ? chipMinorFeatures12_AXIFE : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_VX2_FLOATING_MAD_FIX == 1 ? chipMinorFeatures12_SH_VX2_FLOATING_MAD_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TS_FC_VULKAN_SUPPORT == 1 ? chipMinorFeatures12_TS_FC_VULKAN_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].MSAA_FLOAT_64BIT == 1 ? chipMinorFeatures12_MSAA_FLOAT_64BIT : 0) |
+				(gChipInfo_STM32_6_2_4[i].INDIRECT_COMPUTE_ZERODIM_FIX == 1 ? chipMinorFeatures12_INDIRECT_COMPUTE_ZERODIM_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].Q_CHANNEL_SUPPORT == 1 ? chipMinorFeatures12_Q_CHANNEL_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].MMU_PAGE_DESCRIPTOR == 1 ? chipMinorFeatures12_MMU_PAGE_DESCRIPTOR : 0) |
+				(gChipInfo_STM32_6_2_4[i].YUV_LINEAR_TO_TILE_ROTATE == 1 ? chipMinorFeatures12_YUV_LINEAR_TO_TILE_ROTATE : 0) |
+				(gChipInfo_STM32_6_2_4[i].VEC2_IMULIMAD32_SUPPORT == 1 ? chipMinorFeatures12_VEC2_IMULIMAD32_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].VEC4_IMULIMAD32_SUPPORT == 1 ? chipMinorFeatures12_VEC4_IMULIMAD32_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].VEC2_IDIVIMOD16_SUPPORT == 1 ? chipMinorFeatures12_VEC2_IDIVIMOD16_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].DST_TEX_I2F_F2I_INST_DEPRECATE == 1 ? chipMinorFeatures12_DST_TEX_I2F_F2I_INST_DEPRECATE : 0) |
+				(gChipInfo_STM32_6_2_4[i].ALU_FP16_INSTRUCTIONS == 1 ? chipMinorFeatures12_ALU_FP16_INSTRUCTIONS : 0) |
+				(gChipInfo_STM32_6_2_4[i].DUAL16_14BIT_PC_SUPPORT == 1 ? chipMinorFeatures12_DUAL16_14BIT_PC_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].LDST_CONV_4ROUNDING_MODES == 1 ? chipMinorFeatures12_LDST_CONV_4ROUNDING_MODES : 0) |
+				(gChipInfo_STM32_6_2_4[i].FULL_PACK_MODE_SUPPORT == 1 ? chipMinorFeatures12_FULL_PACK_MODE_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].DEPTH_FLOAT32_SUPPORT == 1 ? chipMinorFeatures12_DEPTH_FLOAT32_SUPPORT : 0);*/
+
+			uint32_t features13 =
+				//(gChipInfo_STM32_6_2_4[i].GPU_INSPECTOR_COUNTERS == 1 ? chipMinorFeatures13_GPU_INSPECTOR_COUNTERS : 0) |
+				//(gChipInfo_STM32_6_2_4[i].FP32_TO_FP16_CONV_FIX == 1 ? chipMinorFeatures13_FP32_TO_FP16_CONV_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].IMGLD_COMP_COUNT_FIX == 1 ? chipMinorFeatures13_IMGLD_COMP_COUNT_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].IMGLD_WIDTH_LT16_FIX == 1 ? chipMinorFeatures13_IMGLD_WIDTH_LT16_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TX_FILTER_ROUND_FIX == 1 ? chipMinorFeatures13_TX_FILTER_ROUND_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].SH_FP32_FMA_SUPPORT == 1 ? chipMinorFeatures13_SH_FP32_FMA_SUPPORT : 0) |
+				//(gChipInfo_STM32_6_2_4[i].PE_64BPP_LINEAR_FORMAT == 1 ? chipMinorFeatures13_PE_64BPP_LINEAR_FORMAT : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TX_ETC2_COMPRESSION == 1 ? chipMinorFeatures13_TX_ETC2_COMPRESSION : 0) |
+				//(gChipInfo_STM32_6_2_4[i].HIGHP_VEC2 == 1 ? chipMinorFeatures13_HIGHP_VEC2 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].MMU_PD_42_BIT_ADDRESS == 1 ? chipMinorFeatures13_MMU_PD_42_BIT_ADDRESS : 0) |
+				//(gChipInfo_STM32_6_2_4[i].BLT_ROBUSTNESS_FIX == 1 ? chipMinorFeatures13_BLT_ROBUSTNESS_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TFB_PERF_FIX == 1 ? chipMinorFeatures13_TFB_PERF_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].SH_SUPERSCALAR_ARCH == 1 ? chipMinorFeatures13_SH_SUPERSCALAR_ARCH : 0) | 00
+				//(gChipInfo_STM32_6_2_4[i].PA_ZEROAREA_LINE_FIX == 1 ? chipMinorFeatures13_PA_ZEROAREA_LINE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].VG_IMAGE_16K == 1 ? chipMinorFeatures13_VG_IMAGE_16K : 0) |
+				(gChipInfo_STM32_6_2_4[i].VG_FORMAT_ARGB2222 == 1 ? chipMinorFeatures13_VG_FORMAT_ARGB2222 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].VIP_HW_FINAL_RELEASE == 1 ? chipMinorFeatures13_VIP_HW_FINAL_RELEASE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SINGLEPORT_ACCUMBUFFER == 1 ? chipMinorFeatures13_NN_SINGLEPORT_ACCUMBUFFER : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_STRIDE_SUPPORT == 1 ? chipMinorFeatures13_NN_STRIDE_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].SWTILING_PHASE1 == 1 ? chipMinorFeatures13_SWTILING_PHASE1 : 0) |
+				(gChipInfo_STM32_6_2_4[i].SWTILING_PHASE2 == 1 ? chipMinorFeatures13_SWTILING_PHASE2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_SIMPLE_INT16 == 1 ? chipMinorFeatures13_TP_SIMPLE_INT16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_REAL_INT16 == 1 ? chipMinorFeatures13_TP_REAL_INT16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_ROI_POOLING == 1 ? chipMinorFeatures13_TP_ROI_POOLING : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_MAX_POOLING_STRIDE1 == 1 ? chipMinorFeatures13_TP_MAX_POOLING_STRIDE1 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_LRN == 1 ? chipMinorFeatures13_TP_LRN : 0) |
+				(gChipInfo_STM32_6_2_4[i].TF_QUANTIZATION == 1 ? chipMinorFeatures13_TF_QUANTIZATION : 0);
+				//(gChipInfo_STM32_6_2_4[i].NN_NONZERO_BORDER == 1 ? chipMinorFeatures13_NN_NONZERO_BORDER : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_MIRROR_BORDER == 1 ? chipMinorFeatures13_NN_MIRROR_BORDER : 0) |
+				//(gChipInfo_STM32_6_2_4[i].AI_GPU == 1 ? chipMinorFeatures13_AI_GPU : 0);
+
+			uint32_t features14 =
+				//(gChipInfo_STM32_6_2_4[i].TP_TENSOR_ADD_MUL == 1 ? chipMinorFeatures13_TP_TENSOR_ADD_MUL : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_DEPTHWISE_INT16XINT8 == 1 ? chipMinorFeatures13_NN_DEPTHWISE_INT16XINT8 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_DEPTHWISE_8BIT_VIP_V7 == 1 ? chipMinorFeatures14_NN_DEPTHWISE_8BIT_VIP_V7 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TP_SOFTMAX == 1 ? chipMinorFeatures14_TP_SOFTMAX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_NN_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TP_23BITS_POST_MULTIPLIER_VIP_V7 == 1 ? chipMinorFeatures14_TP_23BITS_POST_MULTIPLIER_VIP_V7 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].CONV_INT16X8BIT_VIP_V7 == 1 ? chipMinorFeatures14_CONV_INT16X8BIT_VIP_V7 : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_REMOVE_POOLING == 1 ? chipMinorFeatures14_NN_REMOVE_POOLING : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_40BIT_BIAS == 1 ? chipMinorFeatures14_NN_40BIT_BIAS : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TP_REMOVE_USC == 1 ? chipMinorFeatures14_TP_REMOVE_USC : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZDP6 == 1 ? chipMinorFeatures14_NN_ZDP6 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_XYDP9 == 1 ? chipMinorFeatures14_NN_XYDP9 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_FIRST_PIXEL_POOLING == 1 ? chipMinorFeatures14_NN_FIRST_PIXEL_POOLING : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZDP3 == 1 ? chipMinorFeatures14_NN_ZDP3 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_XYDP6 == 1 ? chipMinorFeatures14_NN_XYDP6 : 0) |
+				(gChipInfo_STM32_6_2_4[i].SWTILING_PHASE3 == 1 ? chipMinorFeatures14_SWTILING_PHASE3 : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_STAY_LRU == 1 ? chipMinorFeatures14_USC_STAY_LRU : 0) |
+				(gChipInfo_STM32_6_2_4[i].COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_COEF_COMPRESSION_ENHANCEMENT == 1 ? chipMinorFeatures14_TP_COEF_COMPRESSION_ENHANCEMENT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_COEF_DECOMPRESS_PERF2X == 1 ? chipMinorFeatures14_NN_COEF_DECOMPRESS_PERF2X : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures14_TP_SMALLBATCH_PHASE1 : 0) |
+				(gChipInfo_STM32_6_2_4[i].OCB_COUNTER == 1 ? chipMinorFeatures14_OCB_COUNTER : 0) |
+				(gChipInfo_STM32_6_2_4[i].SCALER == 1 ? chipMinorFeatures14_SCALER : 0) |
+				//(gChipInfo_STM32_6_2_4[i].SCALER_4K == 1 ? chipMinorFeatures14_SCALER_4K : 0) |
+				(gChipInfo_STM32_6_2_4[i].INPUT_4BIT == 1 ? chipMinorFeatures14_INPUT_4BIT : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_NO_Z_LOCATION_OFFSET == 1 ? chipMinorFeatures14_NN_NO_Z_LOCATION_OFFSET : 0) |
+				//(gChipInfo_STM32_6_2_4[i].OCB_REMAP_PHYSICAL_ADDRESS == 1 ? chipMinorFeatures14_OCB_REMAP_PHYSICAL_ADDRESS : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NN_SLOW_OUTPUT == 1 ? chipMinorFeatures14_NN_SLOW_OUTPUT : 0) |
+				//(gChipInfo_STM32_6_2_4[i].NO_NARROW_POST_PROCESS_PIPE == 1 ? chipMinorFeatures14_NO_NARROW_POST_PROCESS_PIPE : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TP_NN_PROBE == 1 ? chipMinorFeatures14_TP_NN_PROBE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_DEPTHWISE_SUPPORT == 1 ? chipMinorFeatures14_NN_DEPTHWISE_SUPPORT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_XYDP0 == 1 ? chipMinorFeatures14_NN_XYDP0 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_WRITE_WITHOUT_USC == 1 ? chipMinorFeatures14_NN_WRITE_WITHOUT_USC : 0);
+				//(gChipInfo_STM32_6_2_4[i].NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 == 1 ? chipMinorFeatures14_NN_HW_LIMITATION_NATIVE_KER_1x2_2x1 : 0);
+
+			uint32_t features15 =
+				(gChipInfo_STM32_6_2_4[i].NN_SMALLBATCH_PHASE1 == 1 ? chipMinorFeatures15_NN_SMALLBATCH_PHASE1 : 0);
+				/*(gChipInfo_STM32_6_2_4[i].NN_SLICE_PADDING_TO_64BYTE_ALIGN == 1 ? chipMinorFeatures15_NN_SLICE_PADDING_TO_64BYTE_ALIGN : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_DW_1x1_CONV_MERGE == 1 ? chipMinorFeatures15_NN_DW_1x1_CONV_MERGE : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_BFLOAT16 == 1 ? chipMinorFeatures15_TP_BFLOAT16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_23BITS_POST_MULTIPLIER == 1 ? chipMinorFeatures15_TP_23BITS_POST_MULTIPLIER : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TRANSPOSE == 1 ? chipMinorFeatures15_NN_TRANSPOSE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZDP_TRANSPOSE_CH9_ONLY == 1 ? chipMinorFeatures15_NN_ZDP_TRANSPOSE_CH9_ONLY : 0) |
+				(gChipInfo_STM32_6_2_4[i].USE_SINGLE_PORT_VIPSRAM == 1 ? chipMinorFeatures15_USE_SINGLE_PORT_VIPSRAM : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_LEAKY_RELU == 1 ? chipMinorFeatures15_NN_LEAKY_RELU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_PRELU == 1 ? chipMinorFeatures15_NN_PRELU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_PER_CHANNEL_QUANT == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_PER_CHANNEL_QUANT_ASYM == 1 ? chipMinorFeatures15_NN_PER_CHANNEL_QUANT_ASYM : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ASYMMETRIC_INT8 == 1 ? chipMinorFeatures15_NN_ASYMMETRIC_INT8 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_FLOAT_POST_MULT == 1 ? chipMinorFeatures15_NN_FLOAT_POST_MULT : 0) |
+				(gChipInfo_STM32_6_2_4[i].PRELU_LEAKLY_RELU_CLAMP == 1 ? chipMinorFeatures15_PRELU_LEAKLY_RELU_CLAMP : 0) |
+				(gChipInfo_STM32_6_2_4[i].TPLITE_BFLOAT16 == 1 ? chipMinorFeatures15_TPLITE_BFLOAT16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].PREPROCESS_IMG_BUF_640BYTE_LIMIT == 1 ? chipMinorFeatures15_PREPROCESS_IMG_BUF_640BYTE_LIMIT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_POST_OUT_SUPPORT_FP16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_POST_OUT_SUPPORT_BF16 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_BF16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_POST_OUT_SUPPORT_FP32 == 1 ? chipMinorFeatures15_NN_POST_OUT_SUPPORT_FP32 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_KERNEL_1BYTE_ALGIN == 1 ? chipMinorFeatures15_TP_KERNEL_1BYTE_ALGIN : 0) |
+				(gChipInfo_STM32_6_2_4[i].BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE == 1 ? chipMinorFeatures15_BFLOAT_COEF_COMPRESSION_ZERO_COEFBIT14_INVERSE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_COMPRESSION_BYPASSS == 1 ? chipMinorFeatures15_NN_COMPRESSION_BYPASSS : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_3_USC == 1 ? chipMinorFeatures15_TP_3_USC : 0) |
+				(gChipInfo_STM32_6_2_4[i].BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE == 1 ? chipMinorFeatures15_BFP_COEF_AUTO_PAD_INCOMPLETE_ZERO_IN_KZ_PLANE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_NATIVE_STRIDE_TWO == 1 ? chipMinorFeatures15_NN_NATIVE_STRIDE_TWO : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TENSOR_ADD == 1 ? chipMinorFeatures15_NN_TENSOR_ADD : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_FLOAT32_IO == 1 ? chipMinorFeatures15_TP_FLOAT32_IO : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SMALL_BATCH_PHASE2 == 1 ? chipMinorFeatures15_NN_SMALL_BATCH_PHASE2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TILE_ACCESS_CAPABILITY == 1 ? chipMinorFeatures15_TILE_ACCESS_CAPABILITY : 0) |
+				(gChipInfo_STM32_6_2_4[i].FAST_DP3_PREPROCESSOR == 1 ? chipMinorFeatures15_FAST_DP3_PREPROCESSOR : 0) |
+				(gChipInfo_STM32_6_2_4[i].DEPTHWISE_SUPPORT_16BIT_FORMAT == 1 ? chipMinorFeatures15_DEPTHWISE_SUPPORT_16BIT_FORMAT : 0);*/
+
+			uint32_t features16 = 0;/*
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_ALU == 1 ? chipMinorFeatures16_NN_SUPPORT_ALU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ENHANCED_MAX_POOLING == 1 ? chipMinorFeatures16_NN_ENHANCED_MAX_POOLING : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TRANSPOSE_PHASE2 == 1 ? chipMinorFeatures16_NN_TRANSPOSE_PHASE2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_FIELD_MOVE_TO_EXT_CMD : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CMD_SUPPORT_SLICE == 1 ? chipMinorFeatures16_NN_CMD_SUPPORT_SLICE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CONV_CORE_BYPASS == 1 ? chipMinorFeatures16_NN_CONV_CORE_BYPASS : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TENSOR_ADD_RELU == 1 ? chipMinorFeatures16_NN_TENSOR_ADD_RELU : 0) |
+				(gChipInfo_STM32_6_2_4[i].TPLITE_SUPPORT_TP_DATA_TRANSPOSE == 1 ? chipMinorFeatures16_TPLITE_SUPPORT_TP_DATA_TRANSPOSE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_CONV_1D == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV_1D : 0) |
+				(gChipInfo_STM32_6_2_4[i].USE_VIPSRAM_FOR_KERNEL_STREAMING == 1 ? chipMinorFeatures16_USE_VIPSRAM_FOR_KERNEL_STREAMING : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_DUMMY_TILE == 1 ? chipMinorFeatures16_NN_SUPPORT_DUMMY_TILE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_KERNEL_1BYTE_ALIGN == 1 ? chipMinorFeatures16_NN_SUPPORT_KERNEL_1BYTE_ALIGN : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_1x1_NON_POOLING_PACKING == 1 ? chipMinorFeatures16_NN_1x1_NON_POOLING_PACKING : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING == 1 ? chipMinorFeatures16_NN_SUPPORT_BOTH_CONV_NATIVE_STRIDE2_AND_POOLING : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 == 1 ? chipMinorFeatures16_NN_SUPPORT_CONV1x1_AND_NATIVE_CONV_STRIDE2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_REMOVE_FC == 1 ? chipMinorFeatures16_TP_REMOVE_FC : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_REMOVE_MMU == 1 ? chipMinorFeatures16_VIP_REMOVE_MMU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_RD_IMG_NEED_EXTRA_SPACE == 1 ? chipMinorFeatures16_NN_RD_IMG_NEED_EXTRA_SPACE : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_INDIV_CLK_NN == 1 ? chipMinorFeatures16_VIP_INDIV_CLK_NN : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_EXPORT_CLK_DIV2 == 1 ? chipMinorFeatures16_VIP_EXPORT_CLK_DIV2 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_2D_AVERAGE_OUTPUT == 1 ? chipMinorFeatures16_NN_2D_AVERAGE_OUTPUT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_JOB_CANCELATION == 1 ? chipMinorFeatures16_NN_JOB_CANCELATION : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_GEMM == 1 ? chipMinorFeatures16_NN_SUPPORT_GEMM : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE == 1 ? chipMinorFeatures16_NN_SUPPORT_INLINE_NWHC_AND_MATRIX_TRANSPOSE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_BATCH == 1 ? chipMinorFeatures16_NN_SUPPORT_BATCH : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_SUPPORT_DEC == 1 ? chipMinorFeatures16_VIP_SUPPORT_DEC : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_MULTI_AXI_ID == 1 ? chipMinorFeatures16_NN_SUPPORT_MULTI_AXI_ID : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_POST_OUT_SUPPORT_INT32 == 1 ? chipMinorFeatures16_NN_POST_OUT_SUPPORT_INT32 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_STREAMPROCESSOR == 1 ? chipMinorFeatures16_NN_SUPPORT_STREAMPROCESSOR : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_DISTRIBUTED_VIPSRAM == 1 ? chipMinorFeatures16_NN_DISTRIBUTED_VIPSRAM : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_FC_ENHANCEMENT == 1 ? chipMinorFeatures16_NN_FC_ENHANCEMENT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_4BIT_PHASE1 == 1 ? chipMinorFeatures16_NN_4BIT_PHASE1 : 0);*/
+
+			uint32_t features17 =
+				(gChipInfo_STM32_6_2_4[i].VIP_DEC400 == 1 ? chipMinorFeatures17_VIP_DEC400 : 0) |
+				/*(gChipInfo_STM32_6_2_4[i].NN_POST_MULT_SUPPORT_FP_CONV == 1 ? chipMinorFeatures17_NN_POST_MULT_SUPPORT_FP_CONV : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_16_8_QUANTIZATION == 1 ? chipMinorFeatures17_NN_SUPPORT_16_8_QUANTIZATION : 0) |
+				(gChipInfo_STM32_6_2_4[i].SPECIAL_8BIT_SIGN_ABS_CONV == 1 ? chipMinorFeatures17_SPECIAL_8BIT_SIGN_ABS_CONV : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_CONFIGURABLE_FASTXDP3 == 1 ? chipMinorFeatures17_NN_SUPPORT_CONFIGURABLE_FASTXDP3 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING == 1 ? chipMinorFeatures17_NN_USE_CORE_SHARING_IMGBUF_AND_SEQ_NO_ZEROSKIPPING : 0) |
+				(gChipInfo_STM32_6_2_4[i].SUPPORT_DECONVNxN_S_LESS_THAN_16 == 1 ? chipMinorFeatures17_SUPPORT_DECONVNxN_S_LESS_THAN_16 : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_PICOCORE_DEPTHWISE == 1 ? chipMinorFeatures17_NN_PICOCORE_DEPTHWISE : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_SUPPORT_TENSOR_TRANSFER == 1 ? chipMinorFeatures17_VIP_SUPPORT_TENSOR_TRANSFER : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SUPPORT_CMD_LOOP == 1 ? chipMinorFeatures17_NN_SUPPORT_CMD_LOOP : 0) |
+				(gChipInfo_STM32_6_2_4[i].VIP_SUPPORT_X_FRAME_COMPRESSION == 1 ? chipMinorFeatures17_VIP_SUPPORT_X_FRAME_COMPRESSION : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SMALL_ACCUM == 1 ? chipMinorFeatures17_NN_SMALL_ACCUM : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM == 1 ? chipMinorFeatures17_NN_SINGLE_POSTMULT_FIELDS_IN_BITSTREAM : 0) |
+				(gChipInfo_STM32_6_2_4[i].POST_MULTIPLIER_LOW_POWER_MODE == 1 ? chipMinorFeatures17_POST_MULTIPLIER_LOW_POWER_MODE : 0) |*/
+				(gChipInfo_STM32_6_2_4[i].NN_PER3DTILE_BUBBLE_FIX == 1 ? chipMinorFeatures17_NN_PER3DTILE_BUBBLE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CACHELINE_MODE_PERF_FIX == 1 ? chipMinorFeatures17_NN_CACHELINE_MODE_PERF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CONV1x1_PERF_FIX == 1 ? chipMinorFeatures17_NN_CONV1x1_PERF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_REORDER_FIX == 1 ? chipMinorFeatures17_TP_REORDER_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CONVOUT_FIFO_DEPTH_FIX == 1 ? chipMinorFeatures17_NN_CONVOUT_FIFO_DEPTH_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZXDP3_KERNEL_READ_CONFLICT_FIX == 1 ? chipMinorFeatures17_NN_ZXDP3_KERNEL_READ_CONFLICT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZDP3_NO_COMPRESS_FIX == 1 ? chipMinorFeatures17_NN_ZDP3_NO_COMPRESS_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ASYNC_COPY_PERF_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_PERF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].HI_REORDER_FIX == 1 ? chipMinorFeatures17_HI_REORDER_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX == 1 ? chipMinorFeatures17_INCORRECT_WR_REQ_TO_USC_BETWEEN_REORDER_AND_NORMAL_LAYER_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].TP_REORDER_LAYER_SUSPEND_FIX == 1 ? chipMinorFeatures17_TP_REORDER_LAYER_SUSPEND_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ASYNC_COPY_MERGE_FIX == 1 ? chipMinorFeatures17_NN_ASYNC_COPY_MERGE_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].USC_INVALIDATE_CACHE_LINE_FIX == 1 ? chipMinorFeatures17_USC_INVALIDATE_CACHE_LINE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_REQ_SLOWARBITRATION_FIX == 1 ? chipMinorFeatures17_NN_REQ_SLOWARBITRATION_FIX : 0) |
+				//(gChipInfo_STM32_6_2_4[i].IMAGE_PARTIAL_CACHE_FIX == 1 ? chipMinorFeatures17_IMAGE_PARTIAL_CACHE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].FULLCACHE_KERNELHEAD_FIX == 1 ? chipMinorFeatures17_FULLCACHE_KERNELHEAD_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_ZDP_INIMAGE_SIZE_FIX == 1 ? chipMinorFeatures17_NN_ZDP_INIMAGE_SIZE_FIX : 0);
+				//(gChipInfo_STM32_6_2_4[i].IDLE_BEFORE_FLUSH_COMPLETE_FIX == 1 ? chipMinorFeatures17_IDLE_BEFORE_FLUSH_COMPLETE_FIX : 0);
+
+			uint32_t features18 = 0; /*
+				(gChipInfo_STM32_6_2_4[i].NO_FLUSH_USC_FIX == 1 ? chipMinorFeatures18_NO_FLUSH_USC_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SMALL_BATCH_FLOPS_RESET_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_FLOPS_RESET_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SMALL_BATCH_DISBLE_FIX == 1 ? chipMinorFeatures18_SMALL_BATCH_DISBLE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX == 1 ? chipMinorFeatures18_OUTPUT_CONVERT_UINT8_INT8_TO_UINT16_INT16_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].IMAGE_NOT_PACKED_IN_SRAM_FIX == 1 ? chipMinorFeatures18_IMAGE_NOT_PACKED_IN_SRAM_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX == 1 ? chipMinorFeatures18_COEF_DELTA_CORD_OVERFLOW_ZRL_8BIT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX == 1 ? chipMinorFeatures18_USC_INDIVIDUAL_PORT_WRT_EARLY_EVICT_DATA_CORRUPT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX == 1 ? chipMinorFeatures18_LOW_EFFICIENCY_OF_ID_WRITE_IMGBUF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX == 1 ? chipMinorFeatures18_KERNEL_VIP_SRAM_READ_BW_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_BOTTLENECK_FIX == 1 ? chipMinorFeatures18_USC_BOTTLENECK_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX == 1 ? chipMinorFeatures18_KERNEL_PER_CORE_LESS_THAN_THIRD_COEF_BUFF_DEPTH_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TILE_NUM_BIGGER_THAN_1024_FIX == 1 ? chipMinorFeatures18_NN_TILE_NUM_BIGGER_THAN_1024_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX == 1 ? chipMinorFeatures18_KERNEL_SIZE_WASTE_IN_PARTIAL_MODE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX == 1 ? chipMinorFeatures18_NN_COMMAND_KERNEL_REQUEST_CONFICT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_REORDER_INTILE_X_SIZE_512_FIX == 1 ? chipMinorFeatures18_TP_REORDER_INTILE_X_SIZE_512_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].IMG_POP_PIPELINE_PAUSE_FIX == 1 ? chipMinorFeatures18_IMG_POP_PIPELINE_PAUSE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].FULLCACHE_KERNEL_INTERLEAVE_FIX == 1 ? chipMinorFeatures18_FULLCACHE_KERNEL_INTERLEAVE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX == 1 ? chipMinorFeatures18_V8_SINGLE_PORT_ACCUMULATION_BUFFER_RW_CONFICT_ZERO_SKIP_PERF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX == 1 ? chipMinorFeatures18_V8_ACCUMLATION_READ_OUT_HAS_BUBBLES_PERF_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX == 1 ? chipMinorFeatures18_DEPTHWISE_NEIGHBOR_IMG_DATA_TRANSFER_NOT_EFFICIENT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX == 1 ? chipMinorFeatures18_DR_JD_DIFF_CONDITION_FOR_CACHELINE_MODE_PRE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX == 1 ? chipMinorFeatures18_TP_ACCESS_VIPSRAM_OT_IS_ONE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].EVIS2_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_EVIS2_FLOP_RESET_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX == 1 ? chipMinorFeatures18_OUTIMAGE_X_BITWIDTH_LIMIT_FOR_NN_TRANSPOSE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_ASYNC_CP_RTN_FLOP_RESET_FIX == 1 ? chipMinorFeatures18_USC_ASYNC_CP_RTN_FLOP_RESET_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX == 1 ? chipMinorFeatures18_IMG_ADDR_NOT_WRAP_IF_OVER_OCB_ADDR_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NEGATIVE_POST_SHIFT_FIX == 1 ? chipMinorFeatures18_NEGATIVE_POST_SHIFT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX == 1 ? chipMinorFeatures18_INIMAGE_2DTILE_NOT_LESS_160PIXEL_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX == 1 ? chipMinorFeatures18_IMG_CAHCE_MODE_MUST_0_IN_IMG_DIRECT_MODE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX == 1 ? chipMinorFeatures18_BURST_COLLECT_DUMMY_DATA_WASTE_CYCLES_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX == 1 ? chipMinorFeatures18_INIMG_NOT_64BYTE_ALIGN_CACHELINE_MODE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX == 1 ? chipMinorFeatures18_TP_FC_FLOAT_LAST_PIXEL_NEGATIVE_0_FIX : 0);*/
+
+			uint32_t features19 = 0;/*
+				(gChipInfo_STM32_6_2_4[i].NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX == 1 ? chipMinorFeatures19_NN_WASTE_COEF_READ_WRITE_BANDWIDTH_128BYTE_VIPSRAM_IN_FULL_PATIAL_CACHE_MODE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_IN_TILE_DATA_IS_ALL_PAD_FIX == 1 ? chipMinorFeatures19_NN_IN_TILE_DATA_IS_ALL_PAD_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX == 1 ? chipMinorFeatures19_NN_TP_INSTR_COMPLETE_IN_SAME_CYCLE_WITH_WAIT_EVENT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX == 1 ? chipMinorFeatures19_CORE_IMAGE_TRANSER_NOT_EFFICIENT_BETWEEN_PARTITION_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX == 1 ? chipMinorFeatures19_TP_FC_KERNEL_STREAM_MUST_LESS_THAN_OR_EQUAL_TO_64BYTE_WHEN_1BYTE_ALGINE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_KERNEL_1x1_NO_PAD_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_1x1_NO_PAD_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_DEPTHWISE_AFTER_16BIT_LAYER_LIMIT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_NOT_FULL_USE_CACHE_LINE_FIX == 1 ? chipMinorFeatures19_TP_NOT_FULL_USE_CACHE_LINE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX == 1 ? chipMinorFeatures19_SH_MOVAI_MOVAR_UNUSED_COMPONENTS_WRITE_DIRTY_DATA_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX == 1 ? chipMinorFeatures19_BURST_COLLECT_CONSUMES_MC_DATA_WIDTH_PER_CYCLE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_ASSYM_INT8_FIX == 1 ? chipMinorFeatures19_TP_ASSYM_INT8_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX == 1 ? chipMinorFeatures19_NN_PAD_SLICE_ERROR_WHEN_TRANSPSE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_2ND_IMG_BASE_ADDR_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_BASE_ADDR_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TP_SYSTEM_FIX == 1 ? chipMinorFeatures19_NN_TP_SYSTEM_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_INTILE_YSIZE_128_LIMIT_FIX == 1 ? chipMinorFeatures19_NN_INTILE_YSIZE_128_LIMIT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SH_CLOCK_GATOR_IDLE_CONDITON_FIX == 1 ? chipMinorFeatures19_SH_CLOCK_GATOR_IDLE_CONDITON_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_BURST_COLLECTER_LAST_FLAG_FIX == 1 ? chipMinorFeatures19_NN_BURST_COLLECTER_LAST_FLAG_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V83_CONVERTER_FOR_NEG_0_FIX == 1 ? chipMinorFeatures19_V83_CONVERTER_FOR_NEG_0_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_2ND_IMG_SMALL_3D_TILE_FIX == 1 ? chipMinorFeatures19_NN_2ND_IMG_SMALL_3D_TILE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_TILE_YSIZE_127_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_TILE_YSIZE_127_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX == 1 ? chipMinorFeatures19_NN_CONV_1D_16BIT_FORMAT_INTILE_SIZE_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_VIPSRAM_DOUBLE_BUFFER_FIX == 1 ? chipMinorFeatures19_NN_VIPSRAM_DOUBLE_BUFFER_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_JD_DIRECT_MODE_FIX == 1 ? chipMinorFeatures19_NN_JD_DIRECT_MODE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_KERNEL_DIRECT_WRONG_PUSH_FIX == 1 ? chipMinorFeatures19_NN_KERNEL_DIRECT_WRONG_PUSH_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].HI_DEFAULT_ENABLE_REORDER_FIX == 1 ? chipMinorFeatures19_HI_DEFAULT_ENABLE_REORDER_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX == 1 ? chipMinorFeatures19_V8_DIRECT_MODE_START_ADDR_BIAS_FOR_NEGATIVE_OFFSET_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V83_INTILESIZE_1X1_10BITS_FIX == 1 ? chipMinorFeatures19_V83_INTILESIZE_1X1_10BITS_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].FASTXDP3_ONLY_IN_DEPTHWISE_FIX == 1 ? chipMinorFeatures19_FASTXDP3_ONLY_IN_DEPTHWISE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX == 1 ? chipMinorFeatures19_USC_PAUSE_TP_WR_REQ_MORE_THAN_256_CYCLES_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures19_DEPTHWISE_FLOAT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_TP_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX == 1 ? chipMinorFeatures19_NN_CIRCULAR_BUF_WRAP_ADDRESS_OVERFLOW_FIX : 0);*/
+
+			uint32_t features20 =
+				/*(gChipInfo_STM32_6_2_4[i].CLOCK_DIV2_FREQ_CHANGE_FIX == 1 ? chipMinorFeatures20_CLOCK_DIV2_FREQ_CHANGE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SMALL_TILE_TENSOR_ADD_FIX == 1 ? chipMinorFeatures20_SMALL_TILE_TENSOR_ADD_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DECOMPRESSOR_DEPTHWISE_FLOAT_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_DEPTHWISE_FLOAT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX == 1 ? chipMinorFeatures20_TP_CIRCULAR_BUF_WRAP_ADDRESS_LESS_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX == 1 ? chipMinorFeatures20_V83_NUMOFPENDINGTILES_FOR_2NDIMAGE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_CACHE_MODE_VIPSRAM_RD_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX == 1 ? chipMinorFeatures20_V83_1ST_KERNEL_STREAM_BUFFER_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].USC_RW_SAME_CACHELINE_UPDATE_FIX == 1 ? chipMinorFeatures20_USC_RW_SAME_CACHELINE_UPDATE_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX == 1 ? chipMinorFeatures20_NN_KERNEL_MSS_SBP2_DIRECT_STEAM_STEAM_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX == 1 ? chipMinorFeatures20_CORE_NUM_OF_KID_FOR_MULTI_LAYER_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].KERNEL_XSIZE_YSIZE_NUM_FIX == 1 ? chipMinorFeatures20_KERNEL_XSIZE_YSIZE_NUM_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE1_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX == 1 ? chipMinorFeatures20_NN_1ST_AND_2ND_INIMAGE_RAISE_VIPSRAM_RD_UPDATE_AT_SAME_TIME_PHASE2_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_SPECIAL_LIST_PARSER_FIX == 1 ? chipMinorFeatures20_TP_SPECIAL_LIST_PARSER_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX == 1 ? chipMinorFeatures20_DECOMPRESSOR_TREATS_TOTAL_CORES_AS_ACTIVE_CORES_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX == 1 ? chipMinorFeatures20_DIRECT_INIMAGE_XSTIDE_LE_13BIT_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].SECONDIMG_TILE_SIDEBANFIFO_FIX == 1 ? chipMinorFeatures20_SECONDIMG_TILE_SIDEBANFIFO_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX == 1 ? chipMinorFeatures20_TRSPB2_ENDADDR_EQUAL_SRAMEND_FIX : 0) |*/
+				(gChipInfo_STM32_6_2_4[i].NN_FP16_ALU == 1 ? chipMinorFeatures20_NN_FP16_ALU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_INT16_ALU == 1 ? chipMinorFeatures20_NN_INT16_ALU : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_INT8_SCALE == 1 ? chipMinorFeatures20_NN_INT8_SCALE : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_POWER_ISOLATION == 1 ? chipMinorFeatures20_NN_POWER_ISOLATION : 0) |
+				(gChipInfo_STM32_6_2_4[i].ZRL_7BIT == 1 ? chipMinorFeatures20_ZRL_7BIT : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_SMALLBATCH == 1 ? chipMinorFeatures20_NN_SMALLBATCH : 0) |
+				(gChipInfo_STM32_6_2_4[i].TP_SMALLBATCH == 1 ? chipMinorFeatures20_TP_SMALLBATCH : 0) |
+				(gChipInfo_STM32_6_2_4[i].ZRL_8BIT == 1 ? chipMinorFeatures20_ZRL_8BIT : 0) |
+				//(gChipInfo_STM32_6_2_4[i].DDR_BURST_LEN_256B == 1 ? chipMinorFeatures20_DDR_BURST_LEN_256B : 0) |
+				//(gChipInfo_STM32_6_2_4[i].XY_OFFSET_LIMITATION_FIX == 1 ? chipMinorFeatures20_XY_OFFSET_LIMITATION_FIX : 0) |
+				(gChipInfo_STM32_6_2_4[i].NN_NONZERO_MIRROR_BORDER == 1 ? chipMinorFeatures20_NN_NONZERO_MIRROR_BORDER : 0) |
+				(gChipInfo_STM32_6_2_4[i].IMAGE_PARTIAL_CACHE == 1 ? chipMinorFeatures20_IMAGE_PARTIAL_CACHE : 0);
+#endif
 
 			linux_devices[count].features = feature;
 			linux_devices[count].minor_features0 = features0;
@@ -1655,8 +2536,15 @@ int main()
 			linux_devices[count].minor_features9 = features9;
 			linux_devices[count].minor_features10 = features10;
 			linux_devices[count].minor_features11 = features11;
-			linux_devices[count].minor_features12 = 0;
-			linux_devices[count].minor_features13 = 0;
+			linux_devices[count].minor_features12 = features12;
+			linux_devices[count].minor_features13 = features13;
+			linux_devices[count].minor_features14 = features14;
+			linux_devices[count].minor_features15 = features15;
+			linux_devices[count].minor_features16 = features16;
+			linux_devices[count].minor_features17 = features17;
+			linux_devices[count].minor_features18 = features18;
+			linux_devices[count].minor_features19 = features19;
+			linux_devices[count].minor_features20 = features20;
 			count++;
 		}
 	}
@@ -1709,6 +2597,13 @@ int main()
 #if defined EXTENDED_FEATURE_LIST
 					std::cout << "		.minor_features12 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features12 << ",\n";
 					std::cout << "		.minor_features13 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features13 << ",\n";
+					std::cout << "		.minor_features14 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features14 << ",\n";
+					std::cout << "		.minor_features15 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features15 << ",\n";
+					std::cout << "		.minor_features16 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features16 << ",\n";
+					std::cout << "		.minor_features17 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features17 << ",\n";
+					std::cout << "		.minor_features18 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features18 << ",\n";
+					std::cout << "		.minor_features19 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features19 << ",\n";
+					std::cout << "		.minor_features20 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features20 << ",\n";
 #endif
 
 					std::cout << "	},\n";
@@ -1753,6 +2648,13 @@ int main()
 #if defined EXTENDED_FEATURE_LIST
 					myfile << "\t\t.minor_features12 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features12 << ",\n";
 					myfile << "\t\t.minor_features13 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features13 << ",\n";
+					myfile << "\t\t.minor_features14 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features14 << ",\n";
+					myfile << "\t\t.minor_features15 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features15 << ",\n";
+					myfile << "\t\t.minor_features16 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features16 << ",\n";
+					myfile << "\t\t.minor_features17 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features17 << ",\n";
+					myfile << "\t\t.minor_features18 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features18 << ",\n";
+					myfile << "\t\t.minor_features19 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features19 << ",\n";
+					myfile << "\t\t.minor_features20 = 0x" << std::hex << std::setw(8) << linux_devices[i].minor_features20 << ",\n";
 #endif
 					myfile << "\t},\n";			
 				}
