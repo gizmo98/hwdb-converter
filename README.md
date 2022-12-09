@@ -1,6 +1,8 @@
 # hwdb-converter
 Converts vivante/verisilicon hwdb files to etnaviv kernel module hwdb entries.
 
+The file features.txt contains 225 hardware entries at the moment.
+
 ## hwdb file sources
 - (NXP) https://github.com/Freescale/kernel-module-imx-gpu-viv
 - (ST) https://github.com/STMicroelectronics/gcnano-binaries
