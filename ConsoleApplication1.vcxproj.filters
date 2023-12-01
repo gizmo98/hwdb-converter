@@ -24,6 +24,9 @@
     <ClInclude Include="gc_feature_database_stm32.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="gc_feature_database_thead-c910.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="converter.cpp">

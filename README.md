@@ -11,3 +11,4 @@ The file features.txt contains 225 hardware entries at the moment.
 - - https://github.com/jevois/jevoispro-sdk/blob/d176cef0857adc51c298ecf44cf5eb449e63ae6a/fenix/linux/drivers/amlogic/npu/kernel/inc/gc_feature_database.h
 - - https://github.com/yan-wyb/npu-driver-amlogic-for-test/blob/cac18ea8e24e30351d101308a0f0fd4297900cf1/hal/kernel/inc/gc_feature_database.h
 - (ETNAVIV) https://github.com/etnaviv/galcore_headers
+- (THEAD) https://github.com/revyos/thead-kernel/blob/lpi4a/drivers/gpu-viv/hal/kernel/inc/gc_feature_database.h

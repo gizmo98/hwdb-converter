@@ -158,6 +158,7 @@
     <ClInclude Include="common.xml.h" />
     <ClInclude Include="gc_feature_database.h" />
     <ClInclude Include="gc_feature_database_stm32.h" />
+    <ClInclude Include="gc_feature_database_thead-c910.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
